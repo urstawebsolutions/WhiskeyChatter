@@ -12,6 +12,7 @@
 		F34B14A929D44143001298F6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34B14A829D44143001298F6 /* ContentView.swift */; };
 		F34B14AB29D44146001298F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F34B14AA29D44146001298F6 /* Assets.xcassets */; };
 		F34B14AE29D44146001298F6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F34B14AD29D44146001298F6 /* Preview Assets.xcassets */; };
+		F34B14B529D47141001298F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F34B14B429D47140001298F6 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		F34B14A829D44143001298F6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F34B14AA29D44146001298F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F34B14AD29D44146001298F6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F34B14B429D47140001298F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +53,6 @@
 				74E029A5AF5082F5E9E0C58D /* Pods-WhiskeyChatter.debug.xcconfig */,
 				BFABAAF8975EE68076CF0FD7 /* Pods-WhiskeyChatter.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -79,6 +80,7 @@
 				F34B14A629D44143001298F6 /* WhiskeyChatterApp.swift */,
 				F34B14A829D44143001298F6 /* ContentView.swift */,
 				F34B14AA29D44146001298F6 /* Assets.xcassets */,
+				F34B14B429D47140001298F6 /* GoogleService-Info.plist */,
 				F34B14AC29D44146001298F6 /* Preview Content */,
 			);
 			path = WhiskeyChatter;
@@ -154,6 +156,7 @@
 			files = (
 				F34B14AE29D44146001298F6 /* Preview Assets.xcassets in Resources */,
 				F34B14AB29D44146001298F6 /* Assets.xcassets in Resources */,
+				F34B14B529D47141001298F6 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
