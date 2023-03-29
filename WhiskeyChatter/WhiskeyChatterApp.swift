@@ -11,7 +11,7 @@ import SwiftUI
 struct WhiskeyChatterApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            WCLoginView()
         }
     }
 }

@@ -9,10 +9,13 @@
 /* Begin PBXBuildFile section */
 		D086BF14EC8369B76D555786 /* Pods_WhiskeyChatter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9481A9172DCBB8CD83E9C453 /* Pods_WhiskeyChatter.framework */; };
 		F34B14A729D44143001298F6 /* WhiskeyChatterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34B14A629D44143001298F6 /* WhiskeyChatterApp.swift */; };
-		F34B14A929D44143001298F6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34B14A829D44143001298F6 /* ContentView.swift */; };
+		F34B14A929D44143001298F6 /* WCLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34B14A829D44143001298F6 /* WCLoginView.swift */; };
 		F34B14AB29D44146001298F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F34B14AA29D44146001298F6 /* Assets.xcassets */; };
 		F34B14AE29D44146001298F6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F34B14AD29D44146001298F6 /* Preview Assets.xcassets */; };
 		F34B14B529D47141001298F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F34B14B429D47140001298F6 /* GoogleService-Info.plist */; };
+		F368DF1829D4CEDC00744EEC /* WCFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F368DF1729D4CEDC00744EEC /* WCFeedView.swift */; };
+		F368DF1A29D4CF4200744EEC /* WCTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F368DF1929D4CF4200744EEC /* WCTabView.swift */; };
+		F368DF1E29D4D67700744EEC /* WCWhiskeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F368DF1D29D4D67600744EEC /* WCWhiskeyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,10 +24,13 @@
 		BFABAAF8975EE68076CF0FD7 /* Pods-WhiskeyChatter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhiskeyChatter.release.xcconfig"; path = "Target Support Files/Pods-WhiskeyChatter/Pods-WhiskeyChatter.release.xcconfig"; sourceTree = "<group>"; };
 		F34B14A329D44143001298F6 /* WhiskeyChatter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhiskeyChatter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F34B14A629D44143001298F6 /* WhiskeyChatterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiskeyChatterApp.swift; sourceTree = "<group>"; };
-		F34B14A829D44143001298F6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F34B14A829D44143001298F6 /* WCLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCLoginView.swift; sourceTree = "<group>"; };
 		F34B14AA29D44146001298F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F34B14AD29D44146001298F6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F34B14B429D47140001298F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F368DF1729D4CEDC00744EEC /* WCFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCFeedView.swift; sourceTree = "<group>"; };
+		F368DF1929D4CF4200744EEC /* WCTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCTabView.swift; sourceTree = "<group>"; };
+		F368DF1D29D4D67600744EEC /* WCWhiskeyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCWhiskeyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +84,10 @@
 			isa = PBXGroup;
 			children = (
 				F34B14A629D44143001298F6 /* WhiskeyChatterApp.swift */,
-				F34B14A829D44143001298F6 /* ContentView.swift */,
+				F368DF1629D4CD5B00744EEC /* Views */,
+				F368DF1329D4CCC800744EEC /* ViewModels */,
+				F368DF1529D4CD2F00744EEC /* Services */,
+				F368DF1429D4CD0F00744EEC /* Models */,
 				F34B14AA29D44146001298F6 /* Assets.xcassets */,
 				F34B14B429D47140001298F6 /* GoogleService-Info.plist */,
 				F34B14AC29D44146001298F6 /* Preview Content */,
@@ -92,6 +101,38 @@
 				F34B14AD29D44146001298F6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F368DF1329D4CCC800744EEC /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F368DF1429D4CD0F00744EEC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F368DF1529D4CD2F00744EEC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		F368DF1629D4CD5B00744EEC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F34B14A829D44143001298F6 /* WCLoginView.swift */,
+				F368DF1729D4CEDC00744EEC /* WCFeedView.swift */,
+				F368DF1929D4CF4200744EEC /* WCTabView.swift */,
+				F368DF1D29D4D67600744EEC /* WCWhiskeyView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,8 +250,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F34B14A929D44143001298F6 /* ContentView.swift in Sources */,
+				F34B14A929D44143001298F6 /* WCLoginView.swift in Sources */,
+				F368DF1829D4CEDC00744EEC /* WCFeedView.swift in Sources */,
+				F368DF1A29D4CF4200744EEC /* WCTabView.swift in Sources */,
 				F34B14A729D44143001298F6 /* WhiskeyChatterApp.swift in Sources */,
+				F368DF1E29D4D67700744EEC /* WCWhiskeyView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
