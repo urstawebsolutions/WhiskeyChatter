@@ -14,7 +14,7 @@ struct WCTabView: View {
         
         VStack{
             Image(systemName: "star.fill")
-            Text("Chatter")
+            Text("Welcome to your Chatter Feed")
             Button {
                 try! Auth.auth().signOut()
                 loggedIn = false
