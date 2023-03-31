@@ -61,7 +61,7 @@ struct WCLaunchView: View {
                     Button {
                         createFormShowing = true
                     } label: {
-                        Text("Create Account")
+                        Text("CREATE ACCOUNT")
                             .font(.title3)
                             .fontWeight(.semibold)
                             .foregroundColor(Color.black)
