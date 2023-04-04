@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		6BC6820C5459F8CA8ADBCF14 /* Pods_WhiskeyChatter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBDEE4D16858727E4FA31C1B /* Pods_WhiskeyChatter.framework */; };
+		F33C7E8729DCA13D00D80354 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33C7E8629DCA13D00D80354 /* DataModel.swift */; };
+		F33C7E8929DCA16E00D80354 /* WCProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33C7E8829DCA16E00D80354 /* WCProfileView.swift */; };
+		F33C7E8C29DCB6AC00D80354 /* WCFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33C7E8B29DCB6AC00D80354 /* WCFeedView.swift */; };
 		F34B14A729D44143001298F6 /* WhiskeyChatterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34B14A629D44143001298F6 /* WhiskeyChatterApp.swift */; };
-		F34B14A929D44143001298F6 /* WCLoginFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34B14A829D44143001298F6 /* WCLoginFormView.swift */; };
+		F34B14A929D44143001298F6 /* WCLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34B14A829D44143001298F6 /* WCLoginView.swift */; };
 		F34B14AB29D44146001298F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F34B14AA29D44146001298F6 /* Assets.xcassets */; };
 		F34B14AE29D44146001298F6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F34B14AD29D44146001298F6 /* Preview Assets.xcassets */; };
 		F34B14B529D47141001298F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F34B14B429D47140001298F6 /* GoogleService-Info.plist */; };
-		F368DF1A29D4CF4200744EEC /* WCTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F368DF1929D4CF4200744EEC /* WCTabView.swift */; };
 		F368DF1E29D4D67700744EEC /* WCWhiskeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F368DF1D29D4D67600744EEC /* WCWhiskeyView.swift */; };
 		F3F0424629D70C8A005A5F96 /* WCLaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F0424529D70C8A005A5F96 /* WCLaunchView.swift */; };
 		F3F0424829D73B4C005A5F96 /* WCLoginCreationFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F0424729D73B4C005A5F96 /* WCLoginCreationFormView.swift */; };
@@ -23,13 +25,15 @@
 		47562CE6CBCBC9B032AAC949 /* Pods-WhiskeyChatter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhiskeyChatter.debug.xcconfig"; path = "Target Support Files/Pods-WhiskeyChatter/Pods-WhiskeyChatter.debug.xcconfig"; sourceTree = "<group>"; };
 		E7BEBA83A0B365EEA9B9AFB7 /* Pods-WhiskeyChatter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhiskeyChatter.release.xcconfig"; path = "Target Support Files/Pods-WhiskeyChatter/Pods-WhiskeyChatter.release.xcconfig"; sourceTree = "<group>"; };
 		EBDEE4D16858727E4FA31C1B /* Pods_WhiskeyChatter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhiskeyChatter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F33C7E8629DCA13D00D80354 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		F33C7E8829DCA16E00D80354 /* WCProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCProfileView.swift; sourceTree = "<group>"; };
+		F33C7E8B29DCB6AC00D80354 /* WCFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCFeedView.swift; sourceTree = "<group>"; };
 		F34B14A329D44143001298F6 /* WhiskeyChatter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhiskeyChatter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F34B14A629D44143001298F6 /* WhiskeyChatterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiskeyChatterApp.swift; sourceTree = "<group>"; };
-		F34B14A829D44143001298F6 /* WCLoginFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCLoginFormView.swift; sourceTree = "<group>"; };
+		F34B14A829D44143001298F6 /* WCLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCLoginView.swift; sourceTree = "<group>"; };
 		F34B14AA29D44146001298F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F34B14AD29D44146001298F6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F34B14B429D47140001298F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		F368DF1929D4CF4200744EEC /* WCTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCTabView.swift; sourceTree = "<group>"; };
 		F368DF1D29D4D67600744EEC /* WCWhiskeyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCWhiskeyView.swift; sourceTree = "<group>"; };
 		F3F0424529D70C8A005A5F96 /* WCLaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCLaunchView.swift; sourceTree = "<group>"; };
 		F3F0424729D73B4C005A5F96 /* WCLoginCreationFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCLoginCreationFormView.swift; sourceTree = "<group>"; };
@@ -62,6 +66,32 @@
 				E7BEBA83A0B365EEA9B9AFB7 /* Pods-WhiskeyChatter.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F33C7E8429DCA08F00D80354 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				F3F0424529D70C8A005A5F96 /* WCLaunchView.swift */,
+				F33C7E8B29DCB6AC00D80354 /* WCFeedView.swift */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		F33C7E8529DCA0A600D80354 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				F34B14A829D44143001298F6 /* WCLoginView.swift */,
+				F3F0424729D73B4C005A5F96 /* WCLoginCreationFormView.swift */,
+				F33C7E8829DCA16E00D80354 /* WCProfileView.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		F33C7E8A29DCA17700D80354 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		F34B149A29D44143001298F6 = {
@@ -108,6 +138,7 @@
 		F368DF1329D4CCC800744EEC /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				F33C7E8629DCA13D00D80354 /* DataModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -129,11 +160,10 @@
 		F368DF1629D4CD5B00744EEC /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F34B14A829D44143001298F6 /* WCLoginFormView.swift */,
-				F368DF1929D4CF4200744EEC /* WCTabView.swift */,
+				F33C7E8A29DCA17700D80354 /* Common */,
+				F33C7E8429DCA08F00D80354 /* Launch */,
+				F33C7E8529DCA0A600D80354 /* Account */,
 				F368DF1D29D4D67600744EEC /* WCWhiskeyView.swift */,
-				F3F0424529D70C8A005A5F96 /* WCLaunchView.swift */,
-				F3F0424729D73B4C005A5F96 /* WCLoginCreationFormView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -253,10 +283,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F34B14A929D44143001298F6 /* WCLoginFormView.swift in Sources */,
+				F33C7E8729DCA13D00D80354 /* DataModel.swift in Sources */,
+				F34B14A929D44143001298F6 /* WCLoginView.swift in Sources */,
 				F3F0424829D73B4C005A5F96 /* WCLoginCreationFormView.swift in Sources */,
 				F3F0424629D70C8A005A5F96 /* WCLaunchView.swift in Sources */,
-				F368DF1A29D4CF4200744EEC /* WCTabView.swift in Sources */,
+				F33C7E8929DCA16E00D80354 /* WCProfileView.swift in Sources */,
+				F33C7E8C29DCB6AC00D80354 /* WCFeedView.swift in Sources */,
 				F34B14A729D44143001298F6 /* WhiskeyChatterApp.swift in Sources */,
 				F368DF1E29D4D67700744EEC /* WCWhiskeyView.swift in Sources */,
 			);
