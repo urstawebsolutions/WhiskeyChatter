@@ -29,6 +29,13 @@ struct WCLaunchView: View {
                             Text("Learn")
                         }
                     }
+                WCProfileView()
+                    .tabItem {
+                        VStack {
+                            Image(systemName: "person")
+                            Text("Learn")
+                        }
+                    }
             }
             
         }

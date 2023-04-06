@@ -66,6 +66,14 @@ struct WCLoginView: View {
                     SecureField("Password", text: $password)
                 }.textFieldStyle(.roundedBorder)
                 
+                //Display Error Message
+                
+                if(self.errorMessage != nil){
+                    Label(self.errorMessage!, systemImage: "exclamationmark.triangle")
+                        .foregroundColor(.red)
+                        .fontWeight(.semibold)
+                }
+                
                 Button{
                     if login == LoginMode.login {
                         
@@ -81,7 +89,7 @@ struct WCLoginView: View {
                             self.errorMessage = nil
                             
                             // Fetch the user meta data
-                            //self.model.getUserData()
+                            self.model.getUserData()
                             
                             // Change the view to logged in view
                             self.model.checkLogin()
@@ -91,6 +99,7 @@ struct WCLoginView: View {
                         // Create a new account
                         Auth.auth().createUser(withEmail: emailAddress, password: password) { result, error in
                             
+                            //TODO: NEED TO CHECK IF USERNAME THEY ARE TRYING TO USE EXISTS
                             // Check for errors
                             guard error == nil else {
                                 self.errorMessage = error!.localizedDescription
@@ -100,15 +109,14 @@ struct WCLoginView: View {
                             self.errorMessage = nil
                             
                             // Save the first name
-                            let firebaseuser = Auth.auth().currentUser
+                            let user = Auth.auth().currentUser
                             let db = Firestore.firestore()
-                            let ref = db.collection("users").document(firebaseuser!.uid)
-                            
+                            let ref = db.collection("users").document(user!.uid)
                             ref.setData(["username":username], merge: true)
                             
                             // Update the user meta data
-                            //let user = UserService.shared.user
-                            //user.username = username
+                            let myUser = UserService.sharedUser.user
+                            myUser.username = username
                             
                             // Change the view to logged in view
                             self.model.checkLogin()

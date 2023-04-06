@@ -1,19 +1,41 @@
 //
-//  WC1FeedView.swift
+//  WCFeedView.swift
 //  WhiskeyChatter
 //
-//  Created by Michael Ursta on 4/4/23.
+//  Created by Michael Ursta on 4/6/23.
 //
 
 import SwiftUI
 
 struct WCFeedView: View {
+    @EnvironmentObject var model: DataModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        /*NavigationView{
+            List(model.recipes) { r in
+                NavigationLink(
+                    //destination: RecipeDetailView(recipe:r),
+                    label:{
+                        HStack(spacing: 20.0){
+                            Image(r.image)
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 50, height: 50, alignment: .center)
+                                .clipped()
+                                .cornerRadius(5)
+                            Text(r.name)
+                        }
+                    }
+                )
+            }
+            .navigationBarTitle("All Recipes")
+        }*/
+        Text("hiu")
     }
 }
 
-struct WC1FeedView_Previews: PreviewProvider {
+struct WCFeedView_Previews: PreviewProvider {
     static var previews: some View {
         WCFeedView()
     }
