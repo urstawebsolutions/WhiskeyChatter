@@ -7,10 +7,10 @@
 
 import Foundation
 
-var databaseService = DatabaseService()
 
 class WCFeedModel: ObservableObject{
-    @Published var feedItems = [WhiskeyFeedItem]()
+    @Published var feedItems = [WhiskeyCommentItem]()
+    var databaseService = DatabaseService()
     
     init(){
         // Get the data for the main feed

@@ -6,33 +6,24 @@
 //
 
 import Foundation
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
-class WhiskeyItem: Identifiable, Decodable{
-    var id:UUID?
-    var name:String
-    var image:String
-    var featured:Bool
-    var description:String
-    var prepTime:String
-    var cookTime:String
-    var totalTime:String
-    var servings:Int
-    var highlights:[String]
-    var directions:[String]
-}
 
-class WhiskeyFeedItem: Identifiable, Decodable{
-    var id:UUID?
-    var name:String
-    var image:String
-    var featured:Bool
-    var description:String
-    var prepTime:String
-    var cookTime:String
-    var totalTime:String
-    var servings:Int
-    var highlights:[String]
-    var directions:[String]
+/*class WhiskeyItem: Codable, Identifiable, Hashable {
+    @DocumentID var id: String?
+    var imageurl: String?
+    var msg: String
+    @ServerTimestamp var timestamp: Date?
+    var senderid: String
+}*/
+
+struct WhiskeyCommentItem: Codable, Identifiable {
+    @DocumentID var id: String?
+    var commentImageUrl: String?
+    var comment: String
+    @ServerTimestamp var commentUpdated: Date?
+    var whiskey: String?
 }
 
 

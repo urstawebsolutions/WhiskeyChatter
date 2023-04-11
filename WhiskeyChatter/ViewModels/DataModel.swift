@@ -57,26 +57,6 @@ class DataModel: ObservableObject {
     
     
     // MARK: - Data methods
-    func getFeedData(){
-        db.collection("comments").getDocuments{ snapshot, error in
-            if error == nil{
-                
-                
-                var comments = [Comment]()
-                
-                /*for doc in snapshot!.documents {
-                    var com = Comment()
-                    com.imageUrl = doc["imageUrl"] as? String ?? ""
-                    com.comment = doc["comment"] as? String ?? ""
-                    comments.append(com)
-                }*/
-                 
-            }
-            else{
-                //handle error
-            }
-        }
-    }
 
     
     /*func saveData(writeToDatabase:Bool = false) {

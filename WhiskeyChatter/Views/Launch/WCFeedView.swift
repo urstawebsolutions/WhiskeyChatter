@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct WCFeedView: View {
-    @EnvironmentObject var model: DataModel
+    @EnvironmentObject var model: WCFeedModel
     
     var body: some View {
         /*ScrollView(showsIndicators: false){
@@ -19,8 +19,11 @@ struct WCFeedView: View {
                 
             }
         }*/
-        
-        Text("hi")
+        if model.feedItems.count > 0{
+            List(model.feedItems){item in
+                Text(item.comment)
+            }
+        }
     }
 }
 

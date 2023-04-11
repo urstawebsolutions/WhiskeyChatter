@@ -14,7 +14,7 @@ class DatabaseService {
     //let listener = whiskeyFeedItemsQuery.addSnapshotListener { snapshot, error in
     
     
-    func getFeedData(completion: @escaping ([WhiskeyFeedItem]) -> Void) {
+    func getFeedData(completion: @escaping ([WhiskeyCommentItem]) -> Void) {
         
         // Get a reference to the database
         let db = Firestore.firestore()
@@ -25,13 +25,12 @@ class DatabaseService {
             
             if snapshot != nil && error == nil {
                 
-                var whiskeyFeedItems = [WhiskeyFeedItem]()
+                var whiskeyFeedItems = [WhiskeyCommentItem]()
                 
                 // Loop through all the returned chat docs
                 for doc in snapshot!.documents {
                     
-                    // Parse the data into Chat structs
-                    let feedItem = try? doc.data(as: WhiskeyFeedItem.self)
+                    let feedItem = try? doc.data(as: WhiskeyCommentItem.self)
                     
                     // Add the chat into the array
                     if let feedItem = feedItem {
