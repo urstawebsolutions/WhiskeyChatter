@@ -16,7 +16,8 @@ struct WhiskeyChatterApp: App {
     }
     var body: some Scene {
         WindowGroup {
-            WCLaunchView().environmentObject(DataModel())
+            WCLaunchView()
+                .environmentObject(DataModel())
         }
     }
 }

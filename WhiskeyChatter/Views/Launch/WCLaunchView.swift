@@ -25,15 +25,16 @@ struct WCLaunchView: View {
                 WCFeedView()
                     .tabItem {
                         VStack {
-                            Image(systemName: "book")
-                            Text("Learn")
+                            Image(systemName: "person")
+                            Text("Chatter")
                         }
                     }
+                    .environmentObject(WCFeedModel())
                 WCProfileView()
                     .tabItem {
                         VStack {
                             Image(systemName: "person")
-                            Text("Learn")
+                            Text("Profile")
                         }
                     }
             }

@@ -19,7 +19,7 @@ class DatabaseService {
         // Get a reference to the database
         let db = Firestore.firestore()
         
-        let query = db.collection("comments").order(by: "commentUpdated", descending: false)
+        let query = db.collection("comments")//.order(by: "commentUpdated", descending: false)
     
         query.getDocuments { snapshot, error in
             
