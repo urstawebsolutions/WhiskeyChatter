@@ -20,9 +20,9 @@ import FirebaseFirestoreSwift
 
 struct WhiskeyCommentItem: Codable, Identifiable {
     @DocumentID var id: String?
-    //var commentImageUrl: String?
+    var commentImageUrl: String?
     var comment: String
-    //@ServerTimestamp var commentUpdated: Date?
+    @ServerTimestamp var commentLastUpdated: Date?
     //var whiskey: String?
 }
 

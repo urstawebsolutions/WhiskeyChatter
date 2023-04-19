@@ -11,17 +11,19 @@ struct WCFeedView: View {
     @EnvironmentObject var feedModel: WCFeedModel
     
     var body: some View {
-        /*ScrollView(showsIndicators: false){
-            ForEach(){ item in
-                VStack{
-                    
-                }
-                
-            }
-        }*/
+        let columns = [GridItem(.flexible()), GridItem(.flexible())]
         if feedModel.feedItems.count > 0{
-            List(feedModel.feedItems){item in
-                Text(item.comment)
+            ScrollView {
+                LazyVGrid(columns: columns) {
+                    ForEach(feedModel.feedItems) { item in
+                        AsyncImage(url: URL(string: item.commentImageUrl!)) { image in
+                            image.resizable()
+                        } placeholder: {
+                            ProgressView()
+                        }
+                        .frame(width: 185, height: 185)
+                    }
+                }
             }
         }
         else{
