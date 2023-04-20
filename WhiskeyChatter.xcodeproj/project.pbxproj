@@ -22,6 +22,9 @@
 		F34B14AE29D44146001298F6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F34B14AD29D44146001298F6 /* Preview Assets.xcassets */; };
 		F34B14B529D47141001298F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F34B14B429D47140001298F6 /* GoogleService-Info.plist */; };
 		F368DF1E29D4D67700744EEC /* WCWhiskeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F368DF1D29D4D67600744EEC /* WCWhiskeyView.swift */; };
+		F375447A29F18E890048405F /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F375447929F18E890048405F /* Fonts.swift */; };
+		F375447C29F1A3660048405F /* WCTabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F375447B29F1A3660048405F /* WCTabsView.swift */; };
+		F375447E29F1A4DE0048405F /* WCTabButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F375447D29F1A4DE0048405F /* WCTabButtonView.swift */; };
 		F3F0424629D70C8A005A5F96 /* WCLaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F0424529D70C8A005A5F96 /* WCLaunchView.swift */; };
 		F3F0424829D73B4C005A5F96 /* WCLoginCreationFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F0424729D73B4C005A5F96 /* WCLoginCreationFormView.swift */; };
 /* End PBXBuildFile section */
@@ -45,6 +48,9 @@
 		F34B14AD29D44146001298F6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F34B14B429D47140001298F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F368DF1D29D4D67600744EEC /* WCWhiskeyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCWhiskeyView.swift; sourceTree = "<group>"; };
+		F375447929F18E890048405F /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		F375447B29F1A3660048405F /* WCTabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCTabsView.swift; sourceTree = "<group>"; };
+		F375447D29F1A4DE0048405F /* WCTabButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCTabButtonView.swift; sourceTree = "<group>"; };
 		F3F0424529D70C8A005A5F96 /* WCLaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCLaunchView.swift; sourceTree = "<group>"; };
 		F3F0424729D73B4C005A5F96 /* WCLoginCreationFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCLoginCreationFormView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,6 +106,8 @@
 		F33C7E8A29DCA17700D80354 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				F375447B29F1A3660048405F /* WCTabsView.swift */,
+				F375447D29F1A4DE0048405F /* WCTabButtonView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -130,6 +138,7 @@
 				F368DF1329D4CCC800744EEC /* ViewModels */,
 				F368DF1529D4CD2F00744EEC /* Services */,
 				F368DF1429D4CD0F00744EEC /* Models */,
+				F375447829F18E460048405F /* Helpers */,
 				F34B14AA29D44146001298F6 /* Assets.xcassets */,
 				F34B14B429D47140001298F6 /* GoogleService-Info.plist */,
 				F34B14AC29D44146001298F6 /* Preview Content */,
@@ -181,6 +190,14 @@
 				F368DF1D29D4D67600744EEC /* WCWhiskeyView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		F375447829F18E460048405F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F375447929F18E890048405F /* Fonts.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,12 +315,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F375447A29F18E890048405F /* Fonts.swift in Sources */,
 				F33C7E9429E466BE00D80354 /* WCFeedModel.swift in Sources */,
 				F33C7E9229DEFD2700D80354 /* WCFeedView.swift in Sources */,
+				F375447C29F1A3660048405F /* WCTabsView.swift in Sources */,
 				F33C7E8729DCA13D00D80354 /* DataModel.swift in Sources */,
 				F34B14A929D44143001298F6 /* WCLoginView.swift in Sources */,
 				F3F0424829D73B4C005A5F96 /* WCLoginCreationFormView.swift in Sources */,
 				F3F0424629D70C8A005A5F96 /* WCLaunchView.swift in Sources */,
+				F375447E29F1A4DE0048405F /* WCTabButtonView.swift in Sources */,
 				F33C7E9829E4DAC500D80354 /* WhiskeyItem.swift in Sources */,
 				F33C7E9629E4674600D80354 /* DatabaseService.swift in Sources */,
 				F33C7E8E29DEF66600D80354 /* AppModels.swift in Sources */,

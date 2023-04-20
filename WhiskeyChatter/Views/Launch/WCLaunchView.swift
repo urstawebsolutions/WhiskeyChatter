@@ -10,6 +10,7 @@ import FirebaseAuth
 
 struct WCLaunchView: View {
     @EnvironmentObject var model: DataModel
+    @State var selectedTab: Tabs = .chatter
     
     var body: some View {
         
@@ -20,8 +21,10 @@ struct WCLaunchView: View {
                     model.checkLogin()
                 }
         }
-        else{
-            TabView {
+        else{}
+            WCFeedView().environmentObject(WCFeedModel())
+            WCTabsView(selectedTab: $selectedTab)
+            /*TabView {
                 WCFeedView()
                     .tabItem {
                         VStack {
@@ -37,8 +40,7 @@ struct WCLaunchView: View {
                             Text("Profile")
                         }
                     }
-            }
-            
+            }*/
         }
     }
         
@@ -101,7 +103,7 @@ struct WCLaunchView: View {
          
          }
          }*/
-    }
+
     
     struct WCLaunchView_Previews: PreviewProvider {
         static var previews: some View {

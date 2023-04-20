@@ -21,7 +21,7 @@ struct WCFeedView: View {
                         } placeholder: {
                             ProgressView()
                         }
-                        .frame(width: 185, height: 185)
+                        .frame(width: 180, height: 180)
                     }
                 }
             }
