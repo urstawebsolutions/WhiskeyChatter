@@ -21,9 +21,11 @@ struct WCLaunchView: View {
                     model.checkLogin()
                 }
         }
-        else{}
-            WCFeedView().environmentObject(WCFeedModel())
+        else{
+            WCFeedView()
             WCTabsView(selectedTab: $selectedTab)
+        
+        }
             /*TabView {
                 WCFeedView()
                     .tabItem {

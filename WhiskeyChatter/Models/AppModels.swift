@@ -27,4 +27,6 @@ class Comment: Identifiable, Decodable{
     var imageUrl:String
     var commentUpdated:Date
     var whiskey:String
+    var commentorName:String
+    var commentorRef:String
 }

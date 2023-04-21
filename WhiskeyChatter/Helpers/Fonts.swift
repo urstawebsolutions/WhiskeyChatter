@@ -10,6 +10,18 @@ import SwiftUI
 
 extension Font {
     
+    public static var tabBar: Font {
+        return Font.custom("Bebas Neue", size: 15)
+    }
+    
+    public static var feedText: Font {
+        return Font.custom("Bebas Neue", size: 18)
+    }
+    
+    public static var feedReplyCount: Font {
+        return Font.custom("Bebas Neue", size: 12)
+    }
+    
     public static var bodyParagraph: Font {
         return Font.custom("LexendDeca-Regular", size: 14)
     }
@@ -20,10 +32,6 @@ extension Font {
     
     public static var smallText: Font {
         return Font.custom("LexendDeca-Regular", size: 10)
-    }
-    
-    public static var tabBar: Font {
-        return Font.custom("LexendDeca-Regular", size: 12)
     }
     
     public static var settings: Font {

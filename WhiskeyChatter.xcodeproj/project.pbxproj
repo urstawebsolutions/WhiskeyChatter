@@ -13,7 +13,7 @@
 		F33C7E8E29DEF66600D80354 /* AppModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33C7E8D29DEF66600D80354 /* AppModels.swift */; };
 		F33C7E9029DEF74400D80354 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33C7E8F29DEF74400D80354 /* UserService.swift */; };
 		F33C7E9229DEFD2700D80354 /* WCFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33C7E9129DEFD2700D80354 /* WCFeedView.swift */; };
-		F33C7E9429E466BE00D80354 /* WCFeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33C7E9329E466BE00D80354 /* WCFeedModel.swift */; };
+		F33C7E9429E466BE00D80354 /* WCFeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33C7E9329E466BE00D80354 /* WCFeedViewModel.swift */; };
 		F33C7E9629E4674600D80354 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33C7E9529E4674600D80354 /* DatabaseService.swift */; };
 		F33C7E9829E4DAC500D80354 /* WhiskeyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33C7E9729E4DAC500D80354 /* WhiskeyItem.swift */; };
 		F34B14A729D44143001298F6 /* WhiskeyChatterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34B14A629D44143001298F6 /* WhiskeyChatterApp.swift */; };
@@ -38,7 +38,7 @@
 		F33C7E8D29DEF66600D80354 /* AppModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModels.swift; sourceTree = "<group>"; };
 		F33C7E8F29DEF74400D80354 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		F33C7E9129DEFD2700D80354 /* WCFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCFeedView.swift; sourceTree = "<group>"; };
-		F33C7E9329E466BE00D80354 /* WCFeedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCFeedModel.swift; sourceTree = "<group>"; };
+		F33C7E9329E466BE00D80354 /* WCFeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCFeedViewModel.swift; sourceTree = "<group>"; };
 		F33C7E9529E4674600D80354 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		F33C7E9729E4DAC500D80354 /* WhiskeyItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiskeyItem.swift; sourceTree = "<group>"; };
 		F34B14A329D44143001298F6 /* WhiskeyChatter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhiskeyChatter.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,7 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				F33C7E8629DCA13D00D80354 /* DataModel.swift */,
-				F33C7E9329E466BE00D80354 /* WCFeedModel.swift */,
+				F33C7E9329E466BE00D80354 /* WCFeedViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -316,7 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F375447A29F18E890048405F /* Fonts.swift in Sources */,
-				F33C7E9429E466BE00D80354 /* WCFeedModel.swift in Sources */,
+				F33C7E9429E466BE00D80354 /* WCFeedViewModel.swift in Sources */,
 				F33C7E9229DEFD2700D80354 /* WCFeedView.swift in Sources */,
 				F375447C29F1A3660048405F /* WCTabsView.swift in Sources */,
 				F33C7E8729DCA13D00D80354 /* DataModel.swift in Sources */,

@@ -8,20 +8,43 @@
 import SwiftUI
 
 struct WCFeedView: View {
-    @EnvironmentObject var feedModel: WCFeedModel
+    @EnvironmentObject var wcFeedViewModel: WCFeedViewModel
     
     var body: some View {
-        let columns = [GridItem(.flexible()), GridItem(.flexible())]
-        if feedModel.feedItems.count > 0{
+        let columns = [GridItem(.flexible(), spacing: 0), GridItem(.flexible(), spacing: 0)]
+        if wcFeedViewModel.feedItems.count > 0{
             ScrollView {
                 LazyVGrid(columns: columns) {
-                    ForEach(feedModel.feedItems) { item in
+                    ForEach(wcFeedViewModel.feedItems) { item in
                         AsyncImage(url: URL(string: item.commentImageUrl!)) { image in
-                            image.resizable()
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 190, height: 190)
+                                .cornerRadius(14)
+                                .clipped()
+                                .overlay(
+                                ZStack{
+                                    HStack{
+                                        Text(item.commentorName)
+                                            .padding(6)
+                                            .foregroundColor(.white)
+                                            .font(Font.feedText)
+                                        Image(systemName: "bubble.left").foregroundColor(.white).padding(3)
+                                            .overlay(
+                                                ZStack{
+                                                    Text("4")
+                                                        .foregroundColor(.white)
+                                                        .font(Font.feedReplyCount)})
+                                    }
+                                 }.background(Color.black)
+                                  .opacity(0.8)
+                                  .cornerRadius(10.0)
+                                  .padding(10), alignment: .bottomLeading)
+                                    
                         } placeholder: {
-                            ProgressView()
+                            ProgressView() //TODO: Figure out what this does
                         }
-                        .frame(width: 180, height: 180)
                     }
                 }
             }

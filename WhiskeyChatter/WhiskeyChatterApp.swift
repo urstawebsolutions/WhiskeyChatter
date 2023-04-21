@@ -14,10 +14,14 @@ struct WhiskeyChatterApp: App {
         // Initialize Firebase
         FirebaseApp.configure()
     }
+    
+    //@StateObject var wcFeedViewModel = WCFeedViewModel()
+    
     var body: some Scene {
         WindowGroup {
             WCLaunchView()
                 .environmentObject(DataModel())
+                .environmentObject(WCFeedViewModel())
         }
     }
 }

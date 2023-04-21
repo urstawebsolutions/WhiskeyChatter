@@ -23,7 +23,8 @@ struct WhiskeyCommentItem: Codable, Identifiable {
     var commentImageUrl: String?
     var comment: String
     @ServerTimestamp var commentLastUpdated: Date?
-    //var whiskey: String?
+    var commentorName:String
+    var commentorRef:DocumentReference
 }
 
 

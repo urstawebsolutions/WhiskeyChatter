@@ -8,7 +8,7 @@
 import Foundation
 
 
-class WCFeedModel: ObservableObject{
+class WCFeedViewModel: ObservableObject{
     @Published var feedItems = [WhiskeyCommentItem]()
     var databaseService = DatabaseService()
     

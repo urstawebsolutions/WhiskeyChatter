@@ -19,58 +19,41 @@ struct WCTabsView: View {
     
     @Binding var selectedTab: Tabs
     //@Binding var isChatShowing: Bool    
-    @EnvironmentObject var chatViewModel: WCFeedModel
 
     var body: some View {
         
         HStack (alignment: .center) {
-            
             Button {
-                // Switch to chatter
                 selectedTab = .chatter
-                
             } label: {
                 
                 WCTabButtonView(buttonText: "CHATTER",
-                             imageName: "glass-full",
                              isActive: selectedTab == .chatter)
-                
             }
             
             Button {
-                // Switch to chatter
                 selectedTab = .hunt
-                
             } label: {
                 
                 WCTabButtonView(buttonText: "HUNT",
-                             imageName: "glass-empty",
-                             isActive: selectedTab == .chatter)
-                
+                             isActive: selectedTab == .hunt)
             }
             
             Button {
-                // Switch to chatter
                 selectedTab = .ping
                 
             } label: {
                 
                 WCTabButtonView(buttonText: "PING",
-                             imageName: "glass-empty",
-                             isActive: selectedTab == .chatter)
-                
+                             isActive: selectedTab == .ping)
             }
             
             Button {
-                // Switch to chatter
                 selectedTab = .post
-                
             } label: {
                 
                 WCTabButtonView(buttonText: "POST",
-                             imageName: "glass-empty",
-                             isActive: selectedTab == .chatter)
-                
+                             isActive: selectedTab == .post)
             }
             
             /*
@@ -113,7 +96,7 @@ struct WCTabsView: View {
             
         }
         .frame(height:75)
-        .background(Color.gray)
+        .background(.black)
         
     }
 }
