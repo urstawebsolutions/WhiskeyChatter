@@ -8,39 +8,41 @@
 import Foundation
 import Firebase
 
+//TODO: ERROR HANDLING in all methods
+
 class DatabaseService {
     
     //Use a snapshot listener when pulling chat data on the whiskey page. Use CWC Chat App For Reference
     //let listener = whiskeyFeedItemsQuery.addSnapshotListener { snapshot, error in
     
     
-    func getFeedData(completion: @escaping ([WhiskeyCommentItem]) -> Void) {
+    func getFeedData(completion: @escaping ([LiquorCommentItem]) -> Void) {
         
         // Get a reference to the database
         let db = Firestore.firestore()
         
         //TODO: Figure out algorithm for how we want it to display
-        let query = db.collection("comments").order(by: "commentLastUpdated", descending: false)
+        let query = db.collection("whiskeyComments").order(by: "commentLastUpdated", descending: false)
     
         query.getDocuments { snapshot, error in
             
             if snapshot != nil && error == nil {
                 
-                var whiskeyFeedItems = [WhiskeyCommentItem]()
+                var liquorFeedItems = [LiquorCommentItem]()
                 
                 // Loop through all the returned chat docs
                 for doc in snapshot!.documents {
                     
-                    let feedItem = try? doc.data(as: WhiskeyCommentItem.self)
+                    let feedItem = try? doc.data(as: LiquorCommentItem.self)
                     
                     // Add the chat into the array
                     if let feedItem = feedItem {
-                        whiskeyFeedItems.append(feedItem)
+                        liquorFeedItems.append(feedItem)
                     }
                 }
                 
                 // Return the data
-                completion(whiskeyFeedItems)
+                completion(liquorFeedItems)
             }
             else {
                 print("Error in database retrieval")
@@ -48,21 +50,24 @@ class DatabaseService {
         }
     }
     
-    func getWhiskeyData(whiskeyId: String) {
+    func getLiquorData(liquorId: String, liquorType: String) {
         // Get a reference to the database
         let db = Firestore.firestore()
-        let whiskey: WhiskeyItem
+        let liquorItem: LiquorItem
         
-        let docRef = db.collection("whiskey").document(whiskeyId)
+        let docRef = db.collection(liquorType).document(liquorId)
 
-        docRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-                print("Document data: \(dataDescription)")
-            } else {
-                print("Document does not exist")
+        /*docRef.getDocument { (snapshot, error) in
+            if let error = error {
+                self.errorMessage = "Failed to to get spirit data."
+                return
             }
-        }
+            guard let data = snapshot?.data() else{
+                self.errorMessage = "Spirit data was not found"
+            }
+            
+            let spiritItem
+        }*/
     }
     
     

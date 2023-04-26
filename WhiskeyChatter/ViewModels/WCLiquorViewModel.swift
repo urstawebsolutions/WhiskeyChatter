@@ -8,17 +8,17 @@
 import Foundation
 
 
-class WCWhiskeyViewModel: ObservableObject{
-    @Published var whiskeyItem = [WhiskeyCommentItem]()
+class WCLiquorViewModel: ObservableObject{
+    //@Published var liquorItem = [liquorItem]()
     var databaseService = DatabaseService()
     
     init(){
     }
     
     func getFeedData(string) {
-        databaseService.getWhiskeyData() { feedItems in
+       // databaseService.getliquorData() { feedItems in
             // Set the retrieved data to the chats property
-            self.feedItems = feedItems
-        }
-    }
+        //    self.feedItems = feedItems
+       // }
+    //}
 }

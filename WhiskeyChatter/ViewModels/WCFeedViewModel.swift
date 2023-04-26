@@ -9,7 +9,7 @@ import Foundation
 
 
 class WCFeedViewModel: ObservableObject{
-    @Published var feedItems = [WhiskeyCommentItem]()
+    @Published var feedItems = [LiquorCommentItem]()
     var databaseService = DatabaseService()
     
     init(){

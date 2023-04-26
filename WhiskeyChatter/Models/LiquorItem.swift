@@ -18,17 +18,18 @@ import FirebaseFirestoreSwift
     var senderid: String
 }*/
 
-struct WhiskeyCommentItem: Codable, Identifiable {
+struct LiquorCommentItem: Codable, Identifiable {
     @DocumentID var id: String?
     var commentImageUrl: String?
     var comment: String
     @ServerTimestamp var commentLastUpdated: Date?
-    var commentorName:String
-    var commentorRef:DocumentReference
-    var whiskeyId:String
+    var commentorName: String
+    var commentorRef: DocumentReference
+    var liquorRef: DocumentReference?
+    var liquorType: String
 }
 
-struct WhiskeyItem: Codable, Identifiable {
+struct LiquorItem: Codable, Identifiable {
     @DocumentID var id: String?
     var commentImageUrl: String?
     var comment: String
