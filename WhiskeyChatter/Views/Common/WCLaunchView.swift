@@ -22,9 +22,9 @@ struct WCLaunchView: View {
                 }
         }
         else{
+            WCMenuView()
             WCFeedView()
             WCTabsView(selectedTab: $selectedTab)
-        
         }
             /*TabView {
                 WCFeedView()

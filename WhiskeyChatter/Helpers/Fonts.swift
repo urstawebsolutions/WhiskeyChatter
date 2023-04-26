@@ -9,6 +9,13 @@ import Foundation
 import SwiftUI
 
 extension Font {
+    public static var header: Font {
+        return Font.custom("Bebas Neue", size: 30)
+    }
+    
+    public static var currentUserDisplay: Font {
+        return Font.custom("Bebas Neue", size: 14)
+    }
     
     public static var tabBar: Font {
         return Font.custom("Bebas Neue", size: 15)

@@ -48,6 +48,24 @@ class DatabaseService {
         }
     }
     
+    func getWhiskeyData(whiskeyId: String) {
+        // Get a reference to the database
+        let db = Firestore.firestore()
+        let whiskey: WhiskeyItem
+        
+        let docRef = db.collection("whiskey").document(whiskeyId)
+
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                print("Document data: \(dataDescription)")
+            } else {
+                print("Document does not exist")
+            }
+        }
+    }
+    
+    
     /*var chatListViewListeners = [ListenerRegistration]()
     var conversationViewListeners = [ListenerRegistration]()
     
