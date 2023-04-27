@@ -49,27 +49,7 @@ class DatabaseService {
             }
         }
     }
-    
-    func getLiquorData(liquorId: String, liquorType: String) {
-        // Get a reference to the database
-        let db = Firestore.firestore()
-        let liquorItem: LiquorItem
-        
-        let docRef = db.collection(liquorType).document(liquorId)
 
-        /*docRef.getDocument { (snapshot, error) in
-            if let error = error {
-                self.errorMessage = "Failed to to get spirit data."
-                return
-            }
-            guard let data = snapshot?.data() else{
-                self.errorMessage = "Spirit data was not found"
-            }
-            
-            let spiritItem
-        }*/
-    }
-    
     
     /*var chatListViewListeners = [ListenerRegistration]()
     var conversationViewListeners = [ListenerRegistration]()

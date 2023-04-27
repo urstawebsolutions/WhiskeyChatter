@@ -6,27 +6,31 @@
 //
 
 import Foundation
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
-//Need class so we don't pas around copies. We want the user reference
+//Need class so we don't pass around copies. We want the user reference
 class User {
     var username: String = ""
     var name: String = ""
 }
 
-class Whiskey: Identifiable, Decodable{
-    var id:UUID?
-    var type:String
-    var brand:String
-    var imageUrl:String
+//Comment Item Instance
+struct LiquorCommentItem: Codable, Identifiable {
+    @DocumentID var id: String?
+    var commentImageUrl: String?
+    var comment: String
+    @ServerTimestamp var commentLastUpdated: Date?
+    var commentorName: String
+    var commentorRef: DocumentReference
+    var liquorRef: DocumentReference?
+    var liquorType: String
 }
 
-class Comment: Identifiable, Decodable{
-    var id:UUID?
-    var comment:String
-    var commentImage:String
-    var imageUrl:String
-    var commentUpdated:Date
-    var whiskey:String
-    var commentorName:String
-    var commentorRef:String
+//Liquor Items Instance
+struct LiquorItem: Codable, Identifiable {
+    @DocumentID var id: String?
+    var name: String?
+    var location: String?
+    var image: String?
 }

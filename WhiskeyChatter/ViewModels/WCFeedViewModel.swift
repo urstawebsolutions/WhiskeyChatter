@@ -6,10 +6,12 @@
 //
 
 import Foundation
+import Firebase
 
 
 class WCFeedViewModel: ObservableObject{
     @Published var feedItems = [LiquorCommentItem]()
+    @Published var liquorItem: LiquorItem?
     var databaseService = DatabaseService()
     
     init(){

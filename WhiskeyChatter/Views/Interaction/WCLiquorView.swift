@@ -6,26 +6,37 @@
 //
 
 import SwiftUI
-import FirebaseFirestoreSwift
-import FirebaseFirestore
 
 struct WCLiquorView: View {
-    
-    var liquorId: String
-    var liquorType: String
+    let liquorId: String
+    @StateObject private var vm = WCLiquorViewModel()
     
     var body: some View {
-        if(liquorId != ""){
-            Text(liquorId)
+        VStack{
+            if vm.liquorItem != nil{
+                AsyncImage(url: URL(string: vm.liquorItem!.image!)) { image in
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 190, height: 190)
+                        .cornerRadius(14)
+                        .clipped()
+                }placeholder: {
+                    ProgressView() //TODO: Figure out what this does
+                }
+                Text(vm.liquorItem!.name!)
+                Text(vm.liquorItem!.location!)
+            }
         }
-        else{
-            Text("Empty")
+        .onAppear{
+            vm.getLiquorData(liquorId: liquorId)
         }
     }
 }
 
+
 struct WCLiquorView_Previews: PreviewProvider {
     static var previews: some View {
-        WCLiquorView(liquorId: "", liquorType: "")
+        WCLiquorView(liquorId: "")
     }
 }
