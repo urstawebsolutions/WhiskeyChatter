@@ -19,7 +19,7 @@ struct WCFeedView: View {
                     LazyVGrid(columns: columns) {
                         ForEach(wcFeedViewModel.feedItems) { item in
                             NavigationLink(
-                                destination: WCLiquorView(liquorId: item.liquorRef!.path),
+                                destination: WCLiquorView(liquorId: item.liquorRef!),
                                 label:{
                                     AsyncImage(url: URL(string: item.commentImageUrl!)) { image in
                                         image

@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct WCLiquorView: View {
-    let liquorId: String
+    let liquorId: DocumentReference
     @StateObject private var vm = WCLiquorViewModel()
     
     var body: some View {
@@ -26,10 +27,30 @@ struct WCLiquorView: View {
                 }
                 Text(vm.liquorItem!.name!)
                 Text(vm.liquorItem!.location!)
+                
+                Spacer()
+                
+                if vm.liqourComItems.count > 0{
+                    NavigationView{
+                        List(vm.liqourComItems) { r in
+                            NavigationLink(
+                                destination: WCFeedView(),
+                                label:{
+                                    HStack(spacing: 20.0){
+                                        Text(r.comment)
+                                    }
+                                }
+                            )
+                        }
+                        .navigationBarTitle("Comments")
+                    }
+                }
             }
+            
         }
         .onAppear{
-            vm.getLiquorData(liquorId: liquorId)
+            vm.getLiquorData(liquorId: liquorId.path)
+            vm.getLiquorComments(liquorId: liquorId)
         }
     }
 }
@@ -37,6 +58,7 @@ struct WCLiquorView: View {
 
 struct WCLiquorView_Previews: PreviewProvider {
     static var previews: some View {
-        WCLiquorView(liquorId: "")
+        let docRef: DocumentReference? = nil
+        WCLiquorView(liquorId: docRef!)
     }
 }
