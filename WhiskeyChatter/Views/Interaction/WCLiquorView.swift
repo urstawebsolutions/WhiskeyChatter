@@ -9,13 +9,15 @@ import SwiftUI
 import Firebase
 
 struct WCLiquorView: View {
-    let liquorId: DocumentReference
+    let liquorType: String
+    let liquorId: String
+    
     @StateObject private var vm = WCLiquorViewModel()
     
     var body: some View {
         VStack{
             if vm.liquorItem != nil{
-                AsyncImage(url: URL(string: vm.liquorItem!.image!)) { image in
+                AsyncImage(url: URL(string: vm.liquorItem!.image)) { image in
                     image
                         .resizable()
                         .aspectRatio(contentMode: .fill)
@@ -25,8 +27,8 @@ struct WCLiquorView: View {
                 }placeholder: {
                     ProgressView() //TODO: Figure out what this does
                 }
-                Text(vm.liquorItem!.name!)
-                Text(vm.liquorItem!.location!)
+                Text(vm.liquorItem!.name)
+                Text(vm.liquorItem!.location)
                 
                 Spacer()
                 
@@ -37,7 +39,17 @@ struct WCLiquorView: View {
                                 destination: WCFeedView(),
                                 label:{
                                     HStack(spacing: 20.0){
-                                        Text(r.comment)
+                                        AsyncImage(url: URL(string: r.commentImageUrl!)) { image in
+                                            image
+                                                .resizable()
+                                                .aspectRatio(contentMode: .fill)
+                                                .frame(width: 65, height: 65)
+                                                .cornerRadius(14)
+                                                .clipped()
+                                        }placeholder: {
+                                            ProgressView() //TODO: Figure out what this does
+                                        }
+                                        Text(r.comment!)
                                     }
                                 }
                             )
@@ -49,8 +61,8 @@ struct WCLiquorView: View {
             
         }
         .onAppear{
-            vm.getLiquorData(liquorId: liquorId.path)
-            vm.getLiquorComments(liquorId: liquorId)
+            vm.getLiquorData(liquorType: liquorType, liquorId: liquorId)
+            vm.getLiquorComments(liquorType: liquorType, liquorId: liquorId)
         }
     }
 }
@@ -58,7 +70,6 @@ struct WCLiquorView: View {
 
 struct WCLiquorView_Previews: PreviewProvider {
     static var previews: some View {
-        let docRef: DocumentReference? = nil
-        WCLiquorView(liquorId: docRef!)
+        WCLiquorView(liquorType: "", liquorId: "")
     }
 }

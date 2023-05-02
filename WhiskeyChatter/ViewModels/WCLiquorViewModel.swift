@@ -15,15 +15,9 @@ class WCLiquorViewModel: ObservableObject{
     var databaseService = DatabaseService()
     
     //TODO: Error Hanbdling
-    func getLiquorData(liquorId: String) {
+    func getLiquorData(liquorType:String, liquorId: String) {
         let db = Firestore.firestore()
-
-        //Split liquor reference: EX: whiskey/WWTHISISSOMEID
-        let componentsArray = liquorId.components(separatedBy: "/")
-        let liquorType = componentsArray.first
-        let liqId = componentsArray.last
-        
-        let ref = db.collection(liquorType!).document(liqId!)
+        let ref = db.collection(liquorType).document(liquorId)
         ref.getDocument { snapshot, error in
             
             // Check there's no errors
@@ -44,21 +38,16 @@ class WCLiquorViewModel: ObservableObject{
     //Get comments for a specific Liqour
     //TODO: Set up db.collection to allow different collection input for multiple liquors
     //TODO: Error Handling
-    func getLiquorComments(commentsType:String, liquorId: String) {
+    func getLiquorComments(liquorType:String, liquorId: String) {
         
         // Get a reference to the database
         let db = Firestore.firestore()
         
-        //Split liquor reference: EX: whiskey/WWTHISISSOMEID
-        let componentsArray = liquorId.components(separatedBy: "/")
-        let liquorType = componentsArray.first
-        let liqId = componentsArray.last
-        
         //Build Collection String EX: whiskeyComments
-        let commentCollection = commentsType + "Comments"
+        let commentCollection = liquorType + "Comments"
         
         //TODO: Figure out algorithm for how we want it to display
-        let query = db.collection(commentCollection).whereField("liqourRef", isEqualTo: liqId!)
+        let query = db.collection(commentCollection).whereField("liquorDocId", isEqualTo: liquorId)
             //.order(by: "commentLastUpdated", descending: false)
     
         query.getDocuments { snapshot, error in

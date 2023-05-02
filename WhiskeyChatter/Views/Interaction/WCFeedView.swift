@@ -19,7 +19,7 @@ struct WCFeedView: View {
                     LazyVGrid(columns: columns) {
                         ForEach(wcFeedViewModel.feedItems) { item in
                             NavigationLink(
-                                destination: WCLiquorView(liquorId: item.liquorRef!),
+                                destination: WCLiquorView(liquorType:item.liquorType!, liquorId: item.liquorDocId!),
                                 label:{
                                     AsyncImage(url: URL(string: item.commentImageUrl!)) { image in
                                         image
@@ -31,7 +31,7 @@ struct WCFeedView: View {
                                             .overlay(
                                                 ZStack{
                                                     HStack{
-                                                        Text(item.commentorName)
+                                                        Text(item.commentorName!)
                                                             .padding(6)
                                                             .foregroundColor(.white)
                                                             .font(Font.feedText)

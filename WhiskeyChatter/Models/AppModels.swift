@@ -19,18 +19,18 @@ class User {
 struct LiquorCommentItem: Codable, Identifiable {
     @DocumentID var id: String?
     var commentImageUrl: String?
-    var comment: String
+    var comment: String?
     @ServerTimestamp var commentLastUpdated: Date?
-    var commentorName: String
+    var commentorName: String?
     var commentorRef: DocumentReference
-    var liquorRef: DocumentReference?
-    var liquorType: String
+    var liquorDocId: String?
+    var liquorType: String?
 }
 
 //Liquor Items Instance
 struct LiquorItem: Codable, Identifiable {
     @DocumentID var id: String?
-    var name: String?
-    var location: String?
-    var image: String?
+    var name: String
+    var location: String
+    var image: String
 }
