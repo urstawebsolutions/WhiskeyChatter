@@ -28,6 +28,7 @@
 		F375448A29F846100048405F /* WCHuntView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F375448929F846100048405F /* WCHuntView.swift */; };
 		F375448C29F846490048405F /* WCPingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F375448B29F846490048405F /* WCPingView.swift */; };
 		F375448E29F8559B0048405F /* WCLiquorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F375448D29F8559B0048405F /* WCLiquorViewModel.swift */; };
+		F37544902A030F970048405F /* WCRepliesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F375448F2A030F970048405F /* WCRepliesView.swift */; };
 		F3F0424629D70C8A005A5F96 /* WCLaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F0424529D70C8A005A5F96 /* WCLaunchView.swift */; };
 		F3F0424829D73B4C005A5F96 /* WCLoginCreationFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F0424729D73B4C005A5F96 /* WCLoginCreationFormView.swift */; };
 /* End PBXBuildFile section */
@@ -57,6 +58,7 @@
 		F375448929F846100048405F /* WCHuntView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCHuntView.swift; sourceTree = "<group>"; };
 		F375448B29F846490048405F /* WCPingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCPingView.swift; sourceTree = "<group>"; };
 		F375448D29F8559B0048405F /* WCLiquorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCLiquorViewModel.swift; sourceTree = "<group>"; };
+		F375448F2A030F970048405F /* WCRepliesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCRepliesView.swift; sourceTree = "<group>"; };
 		F3F0424529D70C8A005A5F96 /* WCLaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCLaunchView.swift; sourceTree = "<group>"; };
 		F3F0424729D73B4C005A5F96 /* WCLoginCreationFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCLoginCreationFormView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,6 +95,7 @@
 		F33C7E8429DCA08F00D80354 /* Interaction */ = {
 			isa = PBXGroup;
 			children = (
+				F375448F2A030F970048405F /* WCRepliesView.swift */,
 				F33C7E9129DEFD2700D80354 /* WCFeedView.swift */,
 				F375448729F845E30048405F /* WCLiquorView.swift */,
 				F375448929F846100048405F /* WCHuntView.swift */,
@@ -325,6 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F375448829F845E30048405F /* WCLiquorView.swift in Sources */,
+				F37544902A030F970048405F /* WCRepliesView.swift in Sources */,
 				F375448E29F8559B0048405F /* WCLiquorViewModel.swift in Sources */,
 				F375448229F3151B0048405F /* WCMenuView.swift in Sources */,
 				F375447A29F18E890048405F /* Fonts.swift in Sources */,

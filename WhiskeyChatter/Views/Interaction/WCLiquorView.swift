@@ -36,7 +36,7 @@ struct WCLiquorView: View {
                     NavigationView{
                         List(vm.liqourComItems) { r in
                             NavigationLink(
-                                destination: WCFeedView(),
+                                destination: WCRepliesView(comment: r, liquorItem: vm.liquorItem!),
                                 label:{
                                     HStack(spacing: 20.0){
                                         AsyncImage(url: URL(string: r.commentImageUrl!)) { image in

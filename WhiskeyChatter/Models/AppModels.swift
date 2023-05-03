@@ -25,6 +25,17 @@ struct LiquorCommentItem: Codable, Identifiable {
     var commentorRef: DocumentReference
     var liquorDocId: String?
     var liquorType: String?
+    var isDeleted: Bool
+    var replyCount: Int
+    var replies: [LiquorCommentReply]?
+}
+
+//Liquor Items Instance
+struct LiquorCommentReply: Codable, Identifiable {
+    @DocumentID var id: String?
+    var reply: String?
+    @ServerTimestamp var replyDate: Date?
+    var commentId: String?
 }
 
 //Liquor Items Instance
@@ -34,3 +45,5 @@ struct LiquorItem: Codable, Identifiable {
     var location: String
     var image: String
 }
+
+
