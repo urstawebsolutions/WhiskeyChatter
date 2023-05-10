@@ -16,7 +16,7 @@ class User {
 }
 
 //Comment Item Instance
-struct LiquorCommentItem: Codable, Identifiable {
+struct LiquorCommentItem: Codable, Identifiable, Hashable {
     @DocumentID var id: String?
     var commentImageUrl: String?
     var comment: String?
@@ -27,7 +27,7 @@ struct LiquorCommentItem: Codable, Identifiable {
     var liquorType: String?
     var isDeleted: Bool
     var replyCount: Int
-    var replies: [LiquorCommentReply]?
+    //var replies: [LiquorCommentReply]?  //Not Allowed in Hashable
 }
 
 //Liquor Items Instance
@@ -36,6 +36,7 @@ struct LiquorCommentReply: Codable, Identifiable {
     var reply: String?
     @ServerTimestamp var replyDate: Date?
     var commentId: String?
+    var replyName: String?
 }
 
 //Liquor Items Instance

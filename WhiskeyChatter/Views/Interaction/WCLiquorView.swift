@@ -17,29 +17,27 @@ struct WCLiquorView: View {
     var body: some View {
         VStack{
             if vm.liquorItem != nil{
-                AsyncImage(url: URL(string: vm.liquorItem!.image)) { image in
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 190, height: 190)
-                        .cornerRadius(14)
-                        .clipped()
-                }placeholder: {
-                    ProgressView() //TODO: Figure out what this does
-                }
-                Text(vm.liquorItem!.name)
-                Text(vm.liquorItem!.location)
-                
-                Spacer()
-                
                 if vm.liqourComItems.count > 0{
-                    NavigationView{
-                        List(vm.liqourComItems) { r in
-                            NavigationLink(
-                                destination: WCRepliesView(comment: r, liquorItem: vm.liquorItem!),
-                                label:{
+                    NavigationStack{
+                        AsyncImage(url: URL(string: vm.liquorItem!.image)) { image in
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 190, height: 190)
+                                .cornerRadius(14)
+                                .clipped()
+                        }placeholder: {
+                            ProgressView() //TODO: Figure out what this does
+                        }
+                        Text(vm.liquorItem!.name)
+                        Text(vm.liquorItem!.location)
+                        
+                        Spacer()
+                        List(vm.liqourComItems){ com in
+                            NavigationLink(value: com){
+                                VStack{
                                     HStack(spacing: 20.0){
-                                        AsyncImage(url: URL(string: r.commentImageUrl!)) { image in
+                                        AsyncImage(url: URL(string: com.commentImageUrl!)) { image in
                                             image
                                                 .resizable()
                                                 .aspectRatio(contentMode: .fill)
@@ -49,13 +47,56 @@ struct WCLiquorView: View {
                                         }placeholder: {
                                             ProgressView() //TODO: Figure out what this does
                                         }
-                                        Text(r.comment!)
+                                        Text(com.comment!)
+                                    }
+                                    HStack{
+                                        Text("Replies: " + String(com.replyCount))
+                                    }
+                                }
+                            }
+                        }
+                        .navigationDestination(for: LiquorCommentItem.self){ comItem in
+                            WCRepliesView(comment: comItem, liquorItem: vm.liquorItem!)
+                        }
+                    }
+
+                
+                    
+                    /*
+                    NavigationView{
+                        List(vm.liqourComItems) { r in
+                            NavigationLink(
+                                destination: WCRepliesView(comment: r, liquorItem: vm.liquorItem!),
+                                label:{
+                                    VStack{
+                                        HStack(spacing: 20.0){
+                                            AsyncImage(url: URL(string: r.commentImageUrl!)) { image in
+                                                image
+                                                    .resizable()
+                                                    .aspectRatio(contentMode: .fill)
+                                                    .frame(width: 65, height: 65)
+                                                    .cornerRadius(14)
+                                                    .clipped()
+                                            }placeholder: {
+                                                ProgressView() //TODO: Figure out what this does
+                                            }
+                                            Text(r.comment!)
+                                        }
+                                        HStack{
+                                            Text("Replies")
+                                            Text(String(r.replyCount))
+                                        }
                                     }
                                 }
                             )
                         }
                         .navigationBarTitle("Comments")
-                    }
+                    }*/
+                    
+                    
+                    
+                    
+                    
                 }
             }
             

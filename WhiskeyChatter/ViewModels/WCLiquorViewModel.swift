@@ -16,6 +16,7 @@ class WCLiquorViewModel: ObservableObject{
     var databaseService = DatabaseService()
     
     //TODO: Error Hanbdling
+    //TODO: Is there a better way to map the data here?
     func getLiquorData(liquorType:String, liquorId: String) {
         let db = Firestore.firestore()
         let ref = db.collection(liquorType).document(liquorId)

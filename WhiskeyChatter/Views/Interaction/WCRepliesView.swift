@@ -11,9 +11,20 @@ import Firebase
 struct WCRepliesView: View {
     var comment: LiquorCommentItem
     var liquorItem: LiquorItem
+    @StateObject private var vm = WCRepliesViewModel()
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            List(vm.replyItems) { r in
+                HStack{
+                    Text(r.replyName!)
+                    Text(r.reply!)
+                }
+            }
+        }
+        .onAppear(){
+            vm.getCommentReplies(commentId: comment.id!, liquorType: comment.liquorType!)
+        }
     }
 }
 
