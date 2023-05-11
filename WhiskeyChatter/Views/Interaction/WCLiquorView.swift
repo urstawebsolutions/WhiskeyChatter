@@ -18,7 +18,7 @@ struct WCLiquorView: View {
         VStack{
             if vm.liquorItem != nil{
                 if vm.liqourComItems.count > 0{
-                    NavigationStack{
+
                         AsyncImage(url: URL(string: vm.liquorItem!.image)) { image in
                             image
                                 .resizable()
@@ -34,7 +34,6 @@ struct WCLiquorView: View {
                         
                         Spacer()
                         List(vm.liqourComItems){ com in
-                            NavigationLink(value: com){
                                 VStack{
                                     HStack(spacing: 20.0){
                                         AsyncImage(url: URL(string: com.commentImageUrl!)) { image in
@@ -50,15 +49,18 @@ struct WCLiquorView: View {
                                         Text(com.comment!)
                                     }
                                     HStack{
-                                        Text("Replies: " + String(com.replyCount))
+                                        Button{
+                                            vm.sheetCommentReply = com
+                                        }label:{
+                                            Text("Replies: " + String(com.replyCount))
+                                        }
                                     }
                                 }
-                            }
+                                .sheet(item: $vm.sheetCommentReply, onDismiss: nil){ comment in
+                                    WCRepliesView(comment: com, liquorItem: vm.liquorItem!)
+                                }
                         }
-                        .navigationDestination(for: LiquorCommentItem.self){ comItem in
-                            WCRepliesView(comment: comItem, liquorItem: vm.liquorItem!)
-                        }
-                    }
+                        
 
                 
                     

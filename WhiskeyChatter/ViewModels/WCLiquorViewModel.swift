@@ -13,6 +13,8 @@ class WCLiquorViewModel: ObservableObject{
     //TODO: Investiate more why i am adding ? and having to unwrap. When to use ? and when to not. NEED TO UNDERSTAND THIS BETTER
     @Published var liquorItem: LiquorItem?
     @Published var liqourComItems = [LiquorCommentItem]()
+    @Published var sheetCommentReply: LiquorCommentItem? = nil
+    
     var databaseService = DatabaseService()
     
     //TODO: Error Hanbdling
