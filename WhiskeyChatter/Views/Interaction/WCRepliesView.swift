@@ -22,9 +22,23 @@ struct WCRepliesView: View {
                 }
             }
         }
+        .ignoresSafeArea()
+        .overlay(closeButton, alignment: .topLeading)
         .onAppear(){
             vm.getCommentReplies(commentId: comment.id!, liquorType: comment.liquorType!)
         }
+        
+    }
+}
+
+private var closeButton: some View{
+    Button{
+    }label:{
+        Image(systemName: "xmark")
+            .font(.headline)
+            .padding(16)
+            .foregroundColor(.primary)
+            .background(.thickMaterial)
     }
 }
 
