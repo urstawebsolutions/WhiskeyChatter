@@ -12,18 +12,28 @@ struct WCRepliesView: View {
     var comment: LiquorCommentItem
     var liquorItem: LiquorItem
     @StateObject private var vm = WCRepliesViewModel()
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
-        VStack{
-            List(vm.replyItems) { r in
+        ZStack{
+            VStack{
                 HStack{
-                    Text(r.replyName!)
-                    Text(r.reply!)
+                    Text("Replies")
+                    Button(action:{
+                        presentationMode.wrappedValue.dismiss()
+                    }){
+                        Image(systemName: "xmark")
+                            .foregroundColor(Color.black).font(.title)
+                    }
+                }
+                List(vm.replyItems) { r in
+                    HStack{
+                        Text(r.replyName!)
+                        Text(r.reply!)
+                    }
                 }
             }
         }
-        .ignoresSafeArea()
-        .overlay(closeButton, alignment: .topLeading)
         .onAppear(){
             vm.getCommentReplies(commentId: comment.id!, liquorType: comment.liquorType!)
         }
