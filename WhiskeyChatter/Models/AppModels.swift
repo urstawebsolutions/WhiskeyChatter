@@ -47,4 +47,31 @@ struct LiquorItem: Codable, Identifiable {
     var image: String
 }
 
+//Post
+struct Post: Identifiable, Codable{
+    @DocumentID var id: String?
+    var comment: String
+    var imageUrl: URL?
+    var imageferenceId: String = ""
+    var publishedDate: Date = Date()
+    var likedIds: [String] = []
+    //var dislikeIds: [String] = []
+    var userName: String
+    var userId: String
+    var userProfileUrl: URL
+    
+    enum CodingKeys: CodingKey{
+        case id
+        case text
+        case imageUrl
+        case imageReferenceId
+        case publishedDate
+        case likedIds
+        //case dislikedIds
+        case userName
+        case userId
+        case userProfileUrl
+    }
+}
+
 
