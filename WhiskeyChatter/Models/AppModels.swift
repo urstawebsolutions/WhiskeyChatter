@@ -11,6 +11,7 @@ import FirebaseFirestoreSwift
 
 //Need class so we don't pass around copies. We want the user reference
 class User {
+    var userId: String = ""
     var username: String = ""
     var name: String = ""
 }
@@ -54,11 +55,16 @@ struct LiquorItem: Codable, Identifiable {
     var imageUrl: URL?
     var imageferenceId: String = ""
     var publishedDate: Date = Date()
+    var lastUpdated: Date = Date()
     var likedIds: [String] = []
     //var dislikeIds: [String] = []
     var userName: String
     var userId: String
     var userProfileUrl: URL
+    var liquorType: String
+    var liquorDocId: String
+    var replyCount: Int = 0
+    var isDeleted: Bool = false
     
     enum CodingKeys: CodingKey{
         case id
@@ -66,11 +72,16 @@ struct LiquorItem: Codable, Identifiable {
         case imageUrl
         case imageReferenceId
         case publishedDate
+        case lastUpdated
         case likedIds
         //case dislikedIds
         case userName
         case userId
         case userProfileUrl
+        case liquorType
+        case liquorDocId
+        case replyCount
+        case isDeleted
     }
 }*/
 

@@ -104,6 +104,7 @@ class DataModel: ObservableObject {
             // Parse the data out and set the user meta data
             let data = snapshot!.data()
             let user = UserService.sharedUser.user
+            user.userId = Auth.auth().currentUser!.uid
             user.name = data?["name"] as? String ?? ""
             user.username = data?["userName"] as? String ?? ""
         }
