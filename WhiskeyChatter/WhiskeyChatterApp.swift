@@ -21,7 +21,6 @@ struct WhiskeyChatterApp: App {
         WindowGroup {
             WCLaunchView()
                 .environmentObject(DataModel())
-                .environmentObject(WCFeedViewModel())
         }
     }
 }

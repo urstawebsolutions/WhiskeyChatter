@@ -7,6 +7,7 @@
 
 import Foundation
 
+//Lets us set the User info and use it throughout the app
 class UserService{
     var user = User()
     static var sharedUser = UserService()

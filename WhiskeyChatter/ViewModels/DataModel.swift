@@ -105,7 +105,7 @@ class DataModel: ObservableObject {
             let data = snapshot!.data()
             let user = UserService.sharedUser.user
             user.name = data?["name"] as? String ?? ""
-            user.username = data?["name"] as? String ?? ""
+            user.username = data?["userName"] as? String ?? ""
         }
     }
     

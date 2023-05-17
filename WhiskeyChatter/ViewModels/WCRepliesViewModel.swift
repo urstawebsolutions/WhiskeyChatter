@@ -25,8 +25,6 @@ class WCRepliesViewModel: ObservableObject{
             .collection("Replies")
             .order(by: "replyDate", descending: false)
         
-        let x:String = UserService.sharedUser.user.username
-        
         query.getDocuments { snapshot, error in
             
             if snapshot != nil && error == nil {

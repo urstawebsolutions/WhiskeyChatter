@@ -48,7 +48,7 @@ struct LiquorItem: Codable, Identifiable {
 }
 
 //Post
-struct Post: Identifiable, Codable{
+/*struct Post: Identifiable, Codable{
     @DocumentID var id: String?
     var comment: String
     var imageUrl: URL?
@@ -72,6 +72,6 @@ struct Post: Identifiable, Codable{
         case userId
         case userProfileUrl
     }
-}
+}*/
 
 

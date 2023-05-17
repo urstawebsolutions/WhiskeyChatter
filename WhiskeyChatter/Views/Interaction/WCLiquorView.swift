@@ -18,7 +18,7 @@ struct WCLiquorView: View {
         VStack{
             if vm.liquorItem != nil{
                 if vm.liqourComItems.count > 0{
-
+                    Text(UserService.sharedUser.user.username)
                         AsyncImage(url: URL(string: vm.liquorItem!.image)) { image in
                             image
                                 .resizable()

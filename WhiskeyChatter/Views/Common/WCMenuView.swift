@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct WCMenuView: View {
+    
+    @State var path: [String] = ["1", "2", "3"]
+    
     var body: some View {
         ZStack{
             Color.black.ignoresSafeArea()

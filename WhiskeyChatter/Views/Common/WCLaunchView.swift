@@ -22,9 +22,27 @@ struct WCLaunchView: View {
                 }
         }
         else{
-            WCMenuView()
-            WCFeedView()
-            WCTabsView(selectedTab: $selectedTab)
+            ZStack {
+                Color("background")
+                    .ignoresSafeArea()
+                
+                VStack {
+                    //WCMenuView()
+                    switch selectedTab {
+                    case .chatter:
+                        WCFeedView()
+                    case .hunt:
+                        WCHuntView()
+                    case .ping:
+                        WCPingView()
+                    case .post:
+                        //WCNewPost()
+                        WCProfileView()               }
+                    
+                    Spacer()
+                    WCTabsView(selectedTab: $selectedTab)
+                }
+            }
         }
             /*TabView {
                 WCFeedView()
