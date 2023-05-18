@@ -48,7 +48,7 @@ struct WCNewPost: View {
             .padding(.horizontal,15)
             .padding(.vertical,3)
             .background(Color.black)
-        }
+        
         ScrollView(.vertical, showsIndicators: false){
             VStack(spacing: 15){
                 TextField("Tell us about your drink!", text: $commentText, axis: .vertical)
@@ -62,29 +62,45 @@ struct WCNewPost: View {
                             .aspectRatio(contentMode: .fill)
                             .frame(width: size.width, height: size.height)
                             .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                        }
+                        .clipped()
+                        .frame(height:220)
                     }
-                    .clipped()
-                    .frame(height:220)
+                }
+                .padding(20)
+            }
+            Divider()
+            HStack{
+                Button{
+                    showImagePicker.toggle()
+                }label:{
+                    Image(systemName: "photo.on.rectangle")
+                }
+                Spacer()
+                Button("Done"){
+                    showKeyboard = false
                 }
             }
-            .padding(20)
+            .padding(.horizontal,15)
+            .padding(.vertical,5)
+            .padding(.horizontal,15)
+            .foregroundColor(Color.black)
         }
-        Divider()
-        HStack{
-            Button{
-                showImagePicker.toggle()
-            }label:{
-                Image(systemName: "photo.on.rectangle")
+        .photosPicker(isPresented: $showImagePicker, selection: $photoItem)
+        .onChange(of: photoItem){photo in
+            if let photo{
+                Task{
+                    if let imageData = try? await photo.loadTransferable(type: Data.self),
+                       let image = UIImage(data: imageData),
+                       let compressedImageData = image.jpegData(compressionQuality: 0.5){
+                            await MainActor.run(body:{
+                                commentImageData = compressedImageData
+                                photoItem = nil
+                            })
+                        }
+                    }
+                }
             }
-            Spacer()
-            Button("Done"){
-                showKeyboard = false
-            }
-        }
-        .padding(.horizontal,15)
-        .padding(.vertical,5)
-        .padding(.horizontal,15)
-        .foregroundColor(Color.black)
     }
 }
 
@@ -94,3 +110,25 @@ struct WCNewPost_Previews: PreviewProvider {
         }
     }
 }
+
+
+
+/*
+ .photosPicker(isPresented: $showImagePicker, selection: $photoItem)
+ 
+ .onChange(of: photoItem){photo in
+     if let photo{
+         Task{
+             if let imageData = try? await photo.loadTransferable(type: Data.self),
+                let image = UIImage(data: imageData),
+                let compressedImageData = image.jpegData(compressionQuality: 0.5){
+                     await MainActor.run(body:{
+                         commentImageData = compressedImageData
+                         photoItem = nil
+                     })
+                 }
+                 
+             }
+         }
+     }
+ */
