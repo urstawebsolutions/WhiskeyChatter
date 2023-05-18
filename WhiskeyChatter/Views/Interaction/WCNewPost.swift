@@ -6,16 +6,91 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct WCNewPost: View {
-    //var onPost: (Post)->()
+    var onPost: (Post)->()
+    @State private var commentText: String = ""
+    @State private var commentImageData: Data?
+    
+    @Environment(\.dismiss) private var dismiss
+    @State private var isLoading: Bool = false
+    @State private var errorMessage: String = ""
+    @State private var showError: Bool = false
+    @State private var photoItem: PhotosPickerItem?
+    @State private var showImagePicker: Bool = false
+    @FocusState private var showKeyboard: Bool
+   
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .leading, spacing: 0){
+            HStack{
+                Menu {
+                    Button("Cancel", role: .destructive){
+                        dismiss()
+                    }
+                }label:{
+                    Text("Cancel")
+                        .font(Font.menuAction)
+                        .foregroundColor(.white)
+                }
+                Spacer()
+                Text("CHATTER")
+                    .foregroundColor(.white)
+                    .font(Font.header)
+                Spacer()
+                Button(action: {}){
+                    Text("Post")
+                        .font(Font.menuAction)
+                        .foregroundColor(.white)
+                }
+                .disabled(commentText == "")
+            }
+            .padding(.horizontal,15)
+            .padding(.vertical,3)
+            .background(Color.black)
+        }
+        ScrollView(.vertical, showsIndicators: false){
+            VStack(spacing: 15){
+                TextField("Tell us about your drink!", text: $commentText, axis: .vertical)
+                    .focused($showKeyboard)
+                
+                if let commentImageData, let image = UIImage(data: commentImageData){
+                    GeometryReader{
+                        let size = $0.size
+                        Image(uiImage: image)
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: size.width, height: size.height)
+                            .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                    }
+                    .clipped()
+                    .frame(height:220)
+                }
+            }
+            .padding(20)
+        }
+        Divider()
+        HStack{
+            Button{
+                showImagePicker.toggle()
+            }label:{
+                Image(systemName: "photo.on.rectangle")
+            }
+            Spacer()
+            Button("Done"){
+                showKeyboard = false
+            }
+        }
+        .padding(.horizontal,15)
+        .padding(.vertical,5)
+        .padding(.horizontal,15)
+        .foregroundColor(Color.black)
     }
 }
 
 struct WCNewPost_Previews: PreviewProvider {
     static var previews: some View {
-        WCNewPost()
+        WCNewPost{_ in
+        }
     }
 }

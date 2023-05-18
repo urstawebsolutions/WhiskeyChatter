@@ -49,7 +49,7 @@ struct LiquorItem: Codable, Identifiable {
 }
 
 //Post
-/*struct Post: Identifiable, Codable{
+struct Post: Identifiable, Codable{
     @DocumentID var id: String?
     var comment: String
     var imageUrl: URL?
@@ -66,7 +66,7 @@ struct LiquorItem: Codable, Identifiable {
     var replyCount: Int = 0
     var isDeleted: Bool = false
     
-    enum CodingKeys: CodingKey{
+   /*enum CodingKeys: CodingKey{
         case id
         case text
         case imageUrl
@@ -74,7 +74,7 @@ struct LiquorItem: Codable, Identifiable {
         case publishedDate
         case lastUpdated
         case likedIds
-        //case dislikedIds
+        case dislikedIds
         case userName
         case userId
         case userProfileUrl
@@ -82,7 +82,7 @@ struct LiquorItem: Codable, Identifiable {
         case liquorDocId
         case replyCount
         case isDeleted
-    }
-}*/
+    }*/
+}
 
 

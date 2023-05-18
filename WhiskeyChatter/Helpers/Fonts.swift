@@ -13,6 +13,10 @@ extension Font {
         return Font.custom("Bebas Neue", size: 30)
     }
     
+    public static var menuAction: Font {
+        return Font.custom("Bebas Neue", size: 20)
+    }
+    
     public static var currentUserDisplay: Font {
         return Font.custom("Bebas Neue", size: 14)
     }

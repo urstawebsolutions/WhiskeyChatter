@@ -36,8 +36,8 @@ struct WCLaunchView: View {
                     case .ping:
                         WCPingView()
                     case .post:
-                        //WCNewPost()
-                        WCProfileView()               }
+                        WCNewPost{_ in}
+                    }
                     
                     Spacer()
                     WCTabsView(selectedTab: $selectedTab)
