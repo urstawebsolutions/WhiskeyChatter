@@ -119,7 +119,7 @@ var body: some View {
     func preparetPost(){
         isLoading = true
         showKeyboard = false
-        let currentUser = UserService.sharedUser.user
+        /*let currentUser = UserService.sharedUser.user
         
         Task{
             do{
@@ -130,7 +130,7 @@ var body: some View {
             catch{
                 await setError(error)
             }
-        }
+        }*/
     }
 }
 

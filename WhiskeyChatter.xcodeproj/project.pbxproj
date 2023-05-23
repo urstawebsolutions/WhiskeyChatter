@@ -29,7 +29,6 @@
 		F375448E29F8559B0048405F /* WCLiquorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F375448D29F8559B0048405F /* WCLiquorViewModel.swift */; };
 		F37544902A030F970048405F /* WCRepliesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F375448F2A030F970048405F /* WCRepliesView.swift */; };
 		F37544922A0406790048405F /* WCRepliesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37544912A0406790048405F /* WCRepliesViewModel.swift */; };
-		F37544A12A04398E0048405F /* WCLiquorViewcopy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37544A02A04398E0048405F /* WCLiquorViewcopy.swift */; };
 		F3F0424629D70C8A005A5F96 /* WCLaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F0424529D70C8A005A5F96 /* WCLaunchView.swift */; };
 		F3F0424829D73B4C005A5F96 /* WCLoginCreationFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F0424729D73B4C005A5F96 /* WCLoginCreationFormView.swift */; };
 		F3FEF27F2A145532003F8FB5 /* WCNewPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FEF27E2A145532003F8FB5 /* WCNewPost.swift */; };
@@ -61,7 +60,6 @@
 		F375448D29F8559B0048405F /* WCLiquorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCLiquorViewModel.swift; sourceTree = "<group>"; };
 		F375448F2A030F970048405F /* WCRepliesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCRepliesView.swift; sourceTree = "<group>"; };
 		F37544912A0406790048405F /* WCRepliesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCRepliesViewModel.swift; sourceTree = "<group>"; };
-		F37544A02A04398E0048405F /* WCLiquorViewcopy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WCLiquorViewcopy.swift; sourceTree = "<group>"; };
 		F3F0424529D70C8A005A5F96 /* WCLaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCLaunchView.swift; sourceTree = "<group>"; };
 		F3F0424729D73B4C005A5F96 /* WCLoginCreationFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCLoginCreationFormView.swift; sourceTree = "<group>"; };
 		F3FEF27E2A145532003F8FB5 /* WCNewPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCNewPost.swift; sourceTree = "<group>"; };
@@ -99,7 +97,6 @@
 		F33C7E8429DCA08F00D80354 /* Interaction */ = {
 			isa = PBXGroup;
 			children = (
-				F37544A02A04398E0048405F /* WCLiquorViewcopy.swift */,
 				F375448F2A030F970048405F /* WCRepliesView.swift */,
 				F33C7E9129DEFD2700D80354 /* WCFeedView.swift */,
 				F375448729F845E30048405F /* WCLiquorView.swift */,
@@ -351,7 +348,6 @@
 				F33C7E8E29DEF66600D80354 /* AppModels.swift in Sources */,
 				F33C7E8929DCA16E00D80354 /* WCProfileView.swift in Sources */,
 				F375448C29F846490048405F /* WCPingView.swift in Sources */,
-				F37544A12A04398E0048405F /* WCLiquorViewcopy.swift in Sources */,
 				F33C7E9029DEF74400D80354 /* UserService.swift in Sources */,
 				F34B14A729D44143001298F6 /* WhiskeyChatterApp.swift in Sources */,
 				F37544922A0406790048405F /* WCRepliesViewModel.swift in Sources */,
