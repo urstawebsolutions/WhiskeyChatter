@@ -32,6 +32,8 @@
 		F3F0424629D70C8A005A5F96 /* WCLaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F0424529D70C8A005A5F96 /* WCLaunchView.swift */; };
 		F3F0424829D73B4C005A5F96 /* WCLoginCreationFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F0424729D73B4C005A5F96 /* WCLoginCreationFormView.swift */; };
 		F3FEF27F2A145532003F8FB5 /* WCNewPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FEF27E2A145532003F8FB5 /* WCNewPost.swift */; };
+		F3FEF2812A1EA42D003F8FB5 /* WCImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FEF2802A1EA42D003F8FB5 /* WCImagePicker.swift */; };
+		F3FEF2832A1EA55B003F8FB5 /* WCAddComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FEF2822A1EA55B003F8FB5 /* WCAddComment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +65,8 @@
 		F3F0424529D70C8A005A5F96 /* WCLaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCLaunchView.swift; sourceTree = "<group>"; };
 		F3F0424729D73B4C005A5F96 /* WCLoginCreationFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCLoginCreationFormView.swift; sourceTree = "<group>"; };
 		F3FEF27E2A145532003F8FB5 /* WCNewPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCNewPost.swift; sourceTree = "<group>"; };
+		F3FEF2802A1EA42D003F8FB5 /* WCImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCImagePicker.swift; sourceTree = "<group>"; };
+		F3FEF2822A1EA55B003F8FB5 /* WCAddComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCAddComment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 				F375448929F846100048405F /* WCHuntView.swift */,
 				F375448B29F846490048405F /* WCPingView.swift */,
 				F3FEF27E2A145532003F8FB5 /* WCNewPost.swift */,
+				F3FEF2802A1EA42D003F8FB5 /* WCImagePicker.swift */,
+				F3FEF2822A1EA55B003F8FB5 /* WCAddComment.swift */,
 			);
 			path = Interaction;
 			sourceTree = "<group>";
@@ -337,10 +343,12 @@
 				F33C7E9429E466BE00D80354 /* WCFeedViewModel.swift in Sources */,
 				F33C7E9229DEFD2700D80354 /* WCFeedView.swift in Sources */,
 				F375447C29F1A3660048405F /* WCTabsView.swift in Sources */,
+				F3FEF2832A1EA55B003F8FB5 /* WCAddComment.swift in Sources */,
 				F33C7E8729DCA13D00D80354 /* DataModel.swift in Sources */,
 				F3FEF27F2A145532003F8FB5 /* WCNewPost.swift in Sources */,
 				F34B14A929D44143001298F6 /* WCLoginView.swift in Sources */,
 				F3F0424829D73B4C005A5F96 /* WCLoginCreationFormView.swift in Sources */,
+				F3FEF2812A1EA42D003F8FB5 /* WCImagePicker.swift in Sources */,
 				F3F0424629D70C8A005A5F96 /* WCLaunchView.swift in Sources */,
 				F375447E29F1A4DE0048405F /* WCTabButtonView.swift in Sources */,
 				F375448A29F846100048405F /* WCHuntView.swift in Sources */,

@@ -1,14 +1,14 @@
 //
-//  WCNewPost.swift
+//  WCAddComment.swift
 //  WhiskeyChatter
 //
-//  Created by Michael Ursta on 5/16/23.
+//  Created by Michael Ursta on 5/24/23.
 //
 
 import SwiftUI
 import PhotosUI
 
-struct WCNewPost: View {
+struct WCAddComment: View {
     var onPost: (Post)->()
     @State private var commentText: String = ""
     @State private var commentImageData: Data?
@@ -17,9 +17,14 @@ struct WCNewPost: View {
     @State private var isLoading: Bool = false
     @State private var errorMessage: String = ""
     @State private var showError: Bool = false
-    @State private var photoItem: PhotosPickerItem?
-    @State private var showImagePicker: Bool = false
+    //@State private var photoItem: PhotosPickerItem?
+    //@State private var showImagePicker: Bool = false
     @FocusState private var showKeyboard: Bool
+    
+    @State private var placeHolderImage = Image("whiskey-chatter-logo")
+    @State private var showingPicker = false
+    @State private var imageSource = UIImagePickerController.SourceType.photoLibrary
+    @State private var drinkImage: UIImage?
    
 var body: some View {
     VStack(alignment: .leading, spacing: 0){
@@ -54,7 +59,11 @@ var body: some View {
             TextField("Tell us about your drink!", text: $commentText, axis: .vertical)
                 .focused($showKeyboard)
             
-            if let commentImageData, let image = UIImage(data: commentImageData){
+            placeHolderImage
+                .resizable()
+                .scaledToFit()
+            
+            /*if let commentImageData, let image = UIImage(data: commentImageData){
                 GeometryReader{
                     let size = $0.size
                     Image(uiImage: image)
@@ -78,28 +87,39 @@ var body: some View {
                     }
                     .clipped()
                     .frame(height:220)
-                }
+                }*/
             }
             .padding(20)
         }
         Divider()
         HStack{
             Button{
-                showImagePicker.toggle()
+                imageSource = .photoLibrary
+                showingPicker = true
             }label:{
-                Image(systemName: "photo.on.rectangle")
+                Image(systemName: "photo")
+            }
+            Text("|")
+            Button{
+                imageSource = .camera
+                showingPicker = true
+            }label:{
+                Image(systemName: "camera")
             }
             Spacer()
             Button("Done"){
                 showKeyboard = false
             }
         }
+        .sheet(isPresented: $showingPicker, onDismiss: loadImage) {
+            WCImagePicker(selectedSource: imageSource, drinkImage: $drinkImage)
+        }
         .padding(.horizontal,15)
         .padding(.vertical,5)
         .padding(.horizontal,15)
         .foregroundColor(Color.black)
     }
-    .photosPicker(isPresented: $showImagePicker, selection: $photoItem)
+    /*.photosPicker(isPresented: $showImagePicker, selection: $photoItem)
     .onChange(of: photoItem){photo in
         if let photo{
             Task{
@@ -114,7 +134,7 @@ var body: some View {
                 }
             }
         }
-    .alert(errorMessage, isPresented: $showImagePicker, actions:{})
+    .alert(errorMessage, isPresented: $showImagePicker, actions:{})*/
     }
     
     func preparePost(){
@@ -145,11 +165,19 @@ var body: some View {
             showError.toggle()
         })
     }
+    
+    func loadImage() {
+        // Check if an image was selected from the library
+        if drinkImage != nil {
+            // Set it as the placeholder image
+            placeHolderImage = Image(uiImage: drinkImage!)
+        }
+    }
 }
 
-struct WCNewPost_Previews: PreviewProvider {
+struct WCAddComment_Previews: PreviewProvider {
     static var previews: some View {
-        WCNewPost{_ in
+        WCAddComment{_ in
         }
     }
 }
@@ -175,3 +203,4 @@ struct WCNewPost_Previews: PreviewProvider {
          }
      }
  */
+

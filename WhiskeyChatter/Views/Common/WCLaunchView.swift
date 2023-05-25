@@ -36,7 +36,7 @@ struct WCLaunchView: View {
                     case .ping:
                         WCPingView()
                     case .post:
-                        WCNewPost{_ in}
+                        WCAddComment{_ in}
                     }
                     
                     Spacer()

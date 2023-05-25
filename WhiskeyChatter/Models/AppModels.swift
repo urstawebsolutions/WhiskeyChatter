@@ -60,7 +60,7 @@ struct Post: Identifiable, Codable{
     //var dislikeIds: [String] = []
     var userName: String
     var userId: String
-    var userProfileUrl: URL
+    //var userProfileUrl: URL
     var liquorType: String
     var liquorDocId: String
     var replyCount: Int = 0

@@ -19,16 +19,18 @@
 	<key>STORAGE_BUCKET</key>
 	<string>whiskeychatter.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:383850825873:ios:b52ce9cba4ed00d4791730</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Allow App To Access Camera</string>
 </dict>
 </plist>
