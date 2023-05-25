@@ -22,13 +22,14 @@ struct LiquorCommentItem: Codable, Identifiable, Hashable {
     var commentImageUrl: String?
     var comment: String?
     @ServerTimestamp var commentLastUpdated: Date?
+    @ServerTimestamp var commentPublishedDate: Date?
     var commentorName: String?
-    var commentorRef: DocumentReference
+    var commentorId: String?
+    var imageReferenceId: String?
     var liquorDocId: String?
     var liquorType: String?
     var isDeleted: Bool
     var replyCount: Int
-    //var replies: [LiquorCommentReply]?  //Not Allowed in Hashable
 }
 
 //Liquor Items Instance
@@ -52,15 +53,12 @@ struct LiquorItem: Codable, Identifiable {
 struct Post: Identifiable, Codable{
     @DocumentID var id: String?
     var comment: String
-    var imageUrl: URL?
-    var imageferenceId: String = ""
-    var publishedDate: Date = Date()
-    var lastUpdated: Date = Date()
-    var likedIds: [String] = []
-    //var dislikeIds: [String] = []
-    var userName: String
-    var userId: String
-    //var userProfileUrl: URL
+    var commentImageUrl: String
+    var imageReferenceId: String = ""
+    var commentPublishedDate: Date = Date()
+    var commentLastUpdated: Date = Date()
+    var commentorName: String
+    var commentorId: String
     var liquorType: String
     var liquorDocId: String
     var replyCount: Int = 0

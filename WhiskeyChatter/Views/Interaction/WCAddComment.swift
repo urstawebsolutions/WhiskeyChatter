@@ -7,6 +7,8 @@
 
 import SwiftUI
 import PhotosUI
+import FirebaseStorage
+import Firebase
 
 struct WCAddComment: View {
     var onPost: (Post)->()
@@ -21,7 +23,7 @@ struct WCAddComment: View {
     //@State private var showImagePicker: Bool = false
     @FocusState private var showKeyboard: Bool
     
-    @State private var placeHolderImage = Image("whiskey-chatter-logo")
+    @State private var placeHolderImage = Image("photo-upload")
     @State private var showingPicker = false
     @State private var imageSource = UIImagePickerController.SourceType.photoLibrary
     @State private var drinkImage: UIImage?
@@ -48,7 +50,7 @@ var body: some View {
                     .font(Font.menuAction)
                     .foregroundColor(.white)
             }
-            .disabled(commentText == "")
+            .disabled(commentText == "" || drinkImage == nil)
         }
         .padding(.horizontal,15)
         .padding(.vertical,3)
@@ -142,20 +144,116 @@ var body: some View {
         showKeyboard = false
         let currentUser = UserService.sharedUser.user
         
+        //Must add a photo
+        guard drinkImage != nil else{
+            //TODO: alert that they must add a photo
+            return
+        }
+        //guard let profileURL = profileURL else{return}
+        let imageRefID = "\(currentUser.userId)\(Date())"
+        let storageRef = Storage.storage().reference()
+        let imageData = drinkImage!.jpegData(compressionQuality: 0.8)
+        
+        guard imageData != nil else {
+            return
+        }
+        
+        //TODO: change whiskey to selected type
+        let path = "commentimages/whiskey/\(UUID().uuidString).jpg"
+        let fileRef = storageRef.child(path)
+        
+        let uploadTask = fileRef.putData(imageData!, metadata: nil){ metadata,
+            error in
+            if error == nil && metadata != nil{
+                
+                let post = Post(
+                    comment: commentText,
+                    commentImageUrl: path,
+                    imageReferenceId: imageRefID,
+                    commentPublishedDate: Date(),
+                    commentLastUpdated: Date(),
+                    commentorName: currentUser.username,
+                    commentorId: currentUser.userId,
+                    liquorType: "whiskey",
+                    liquorDocId: "AVCmmW6tIISHUAs2ggFM",
+                    replyCount: 0,
+                    isDeleted: false
+                )
+                
+
+                do{
+                    try Firestore.firestore().collection("whiskeyComments").document().setData(from: post)
+                }
+                catch{
+                    
+                }
+         
+            }
+        }
+        
+        
         /*Task{
             do{
+                //Must add a photo
+                guard drinkImage != nil else{
+                    //TODO: alert that they must add a photo
+                    return
+                }
                 //guard let profileURL = profileURL else{return}
                 let imageRefID = "\(currentUser.userId)\(Date())"
-                let storageRef = Storage.storage().reference().child("Post_Images").child("whiskeyImages").child(imageReferenceId)
-                if let commentImageData{
-                    let x = try await storageRef.putData(commentImageData)
-                    let downloadUrl = try await storageRef.downloadUrl()
+                let storageRef = Storage.storage().reference()
+                let imageData = drinkImage!.jpegData(compressionQuality: 0.8)
+                
+                guard imageData != nil else {
+                    return
                 }
+                
+                //TODO: change whiskey to selected type
+                let path = "commentimages/whiskey/\(UUID().uuidString).jpg"
+                let fileRef = storageRef.child(path)
+                
+                //User is uploading an image
+                if let imageData{
+                    storageRef.putData(imageData!)
+                    
+                    //TODO: Set liquorId and LiqourType from a picker people choose from
+                    //I hardcoded those values for now for testing
+                 let post = Post(
+                     comment: commentText,
+                     commentImageUrl: path,
+                     imageReferenceId: imageRefID,
+                     commentPublishedDate: Date(),
+                     commentLastUpdated: Date(),
+                     commentorName: currentUser.username,
+                     commentorId: currentUser.userId,
+                     liquorType: "whiskey",
+                     liquorDocId: "AVCmmW6tIISHUAs2ggFM",
+                     replyCount: 0,
+                     isDeleted: false
+                 )
+                    try await createPost(post: post)
+                }
+                else{
+                    //TODO: alert that they must add a photo
+                    return
+                }
+                
             }
             catch{
                 await showPostError(error)
             }
         }*/
+    }
+    
+    func createPost(post: Post) async throws{
+        //TODO: Change out hardcoded Whiskey Comments
+        let _ = try Firestore.firestore().collection("whiskeyComments").addDocument(from: post, completion: { error in
+            if error == nil{
+                isLoading = false
+                onPost(post)
+                dismiss()
+            }
+        })
     }
     
     //TODO: Move to Error Handling
