@@ -121,6 +121,11 @@ var body: some View {
         .padding(.horizontal,15)
         .foregroundColor(Color.black)
     }
+    //TODO: Add Loading View
+    //.overlay{
+        //LoadingView(show: $isLoading)
+    //}
+    
     /*.photosPicker(isPresented: $showImagePicker, selection: $photoItem)
     .onChange(of: photoItem){photo in
         if let photo{
@@ -165,29 +170,34 @@ var body: some View {
         let uploadTask = fileRef.putData(imageData!, metadata: nil){ metadata,
             error in
             if error == nil && metadata != nil{
-                
-                let post = Post(
-                    comment: commentText,
-                    commentImageUrl: path,
-                    imageReferenceId: imageRefID,
-                    commentPublishedDate: Date(),
-                    commentLastUpdated: Date(),
-                    commentorName: currentUser.username,
-                    commentorId: currentUser.userId,
-                    liquorType: "whiskey",
-                    liquorDocId: "AVCmmW6tIISHUAs2ggFM",
-                    replyCount: 0,
-                    isDeleted: false
-                )
-                
+                fileRef.downloadURL { url, error in
+                  var fileUrl = ""
+                  if let error = error {
+                      fileUrl = "https://firebasestorage.googleapis.com/v0/b/whiskeychatter.appspot.com/o/appimages%2Fphoto-error.png?alt=media&token=31eff5e1-e15d-4ea0-a37c-a596f1de2829"
+                  } else {
+                      fileUrl = url!.absoluteString
+                  }
+                    let post = Post(
+                        comment: commentText,
+                        commentImageUrl: fileUrl,
+                        imageReferenceId: imageRefID,
+                        commentPublishedDate: Date(),
+                        commentLastUpdated: Date(),
+                        commentorName: currentUser.username,
+                        commentorId: currentUser.userId,
+                        liquorType: "whiskey",
+                        liquorDocId: "AVCmmW6tIISHUAs2ggFM",
+                        replyCount: 0,
+                        isDeleted: false
+                    )
 
-                do{
-                    try Firestore.firestore().collection("whiskeyComments").document().setData(from: post)
+                    do{
+                        try Firestore.firestore().collection("whiskeyComments").document().setData(from: post)
+                    }
+                    catch{
+                        
+                    }
                 }
-                catch{
-                    
-                }
-         
             }
         }
         

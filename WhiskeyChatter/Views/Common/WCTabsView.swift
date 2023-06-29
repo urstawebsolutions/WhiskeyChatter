@@ -16,13 +16,13 @@ enum Tabs: Int {
 }
 
 struct WCTabsView: View {
-    
+    @State private var showingSheet = false
     @Binding var selectedTab: Tabs
     //@Binding var isChatShowing: Bool    
 
     var body: some View {
         
-        HStack (alignment: .center) {
+        /*HStack (alignment: .center) {
             Button {
                 selectedTab = .chatter
             } label: {
@@ -97,6 +97,31 @@ struct WCTabsView: View {
         }
         .frame(height:75)
         .background(.black)
+         */
+        
+        NavigationView {
+                Text("Hello, world!")
+                    .toolbar {
+                        ToolbarItemGroup(placement: .bottomBar) {
+                            Spacer()
+                            Button {
+                                  //action
+                            } label: {
+                                Label("Main", systemImage: "house")
+                            }
+                            Spacer()
+                            Button {
+                                showingSheet = true
+                            } label: {
+                                Label("Main", systemImage: "square.and.arrow.up")
+                            }
+                            Spacer()
+                        }
+                    }
+                    .sheet(isPresented: $showingSheet) {
+                        Text("This is s sheet view")
+                    }
+                }
         
     }
 }
