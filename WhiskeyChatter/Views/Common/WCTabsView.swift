@@ -7,28 +7,19 @@
 
 import SwiftUI
 
-enum Tabs: Int {
-    case chatter = 0
-    case hunt = 1
-    case ping = 2
-    case post = 3
-    
-}
-
 struct WCTabsView: View {
-    @State private var showingSheet = false
-    @Binding var selectedTab: Tabs
-    //@Binding var isChatShowing: Bool    
+    
+    @Binding var selectedTab: Tabs  
 
     var body: some View {
         
-        /*HStack (alignment: .center) {
+        HStack (alignment: .center) {
             Button {
-                selectedTab = .chatter
+                selectedTab = Tabs.chatter
             } label: {
                 
                 WCTabButtonView(buttonText: "CHATTER",
-                             isActive: selectedTab == .chatter)
+                                isActive: selectedTab == Tabs.chatter)
             }
             
             Button {
@@ -36,7 +27,7 @@ struct WCTabsView: View {
             } label: {
                 
                 WCTabButtonView(buttonText: "HUNT",
-                             isActive: selectedTab == .hunt)
+                                isActive: selectedTab == Tabs.hunt)
             }
             
             Button {
@@ -45,7 +36,7 @@ struct WCTabsView: View {
             } label: {
                 
                 WCTabButtonView(buttonText: "PING",
-                             isActive: selectedTab == .ping)
+                                isActive: selectedTab == Tabs.ping)
             }
             
             Button {
@@ -53,7 +44,7 @@ struct WCTabsView: View {
             } label: {
                 
                 WCTabButtonView(buttonText: "POST",
-                             isActive: selectedTab == .post)
+                             isActive: selectedTab == Tabs.post)
             }
             
             /*
@@ -97,31 +88,6 @@ struct WCTabsView: View {
         }
         .frame(height:75)
         .background(.black)
-         */
-        
-        NavigationView {
-                Text("Hello, world!")
-                    .toolbar {
-                        ToolbarItemGroup(placement: .bottomBar) {
-                            Spacer()
-                            Button {
-                                  //action
-                            } label: {
-                                Label("Main", systemImage: "house")
-                            }
-                            Spacer()
-                            Button {
-                                showingSheet = true
-                            } label: {
-                                Label("Main", systemImage: "square.and.arrow.up")
-                            }
-                            Spacer()
-                        }
-                    }
-                    .sheet(isPresented: $showingSheet) {
-                        Text("This is s sheet view")
-                    }
-                }
         
     }
 }

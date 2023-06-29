@@ -36,7 +36,7 @@ struct WCLaunchView: View {
                     case .ping:
                         WCPingView()
                     case .post:
-                        WCAddComment{_ in}
+                        WCAddComment(tabSelection: $selectedTab)
                     }
                     
                     Spacer()

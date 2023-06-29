@@ -34,6 +34,7 @@
 		F3FEF27F2A145532003F8FB5 /* WCNewPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FEF27E2A145532003F8FB5 /* WCNewPost.swift */; };
 		F3FEF2812A1EA42D003F8FB5 /* WCImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FEF2802A1EA42D003F8FB5 /* WCImagePicker.swift */; };
 		F3FEF2832A1EA55B003F8FB5 /* WCAddComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FEF2822A1EA55B003F8FB5 /* WCAddComment.swift */; };
+		F3FEF2852A4E0E55003F8FB5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FEF2842A4E0E55003F8FB5 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,7 @@
 		F3FEF27E2A145532003F8FB5 /* WCNewPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCNewPost.swift; sourceTree = "<group>"; };
 		F3FEF2802A1EA42D003F8FB5 /* WCImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCImagePicker.swift; sourceTree = "<group>"; };
 		F3FEF2822A1EA55B003F8FB5 /* WCAddComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCAddComment.swift; sourceTree = "<group>"; };
+		F3FEF2842A4E0E55003F8FB5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				F375447929F18E890048405F /* Fonts.swift */,
+				F3FEF2842A4E0E55003F8FB5 /* Constants.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				F33C7E9029DEF74400D80354 /* UserService.swift in Sources */,
 				F34B14A729D44143001298F6 /* WhiskeyChatterApp.swift in Sources */,
 				F37544922A0406790048405F /* WCRepliesViewModel.swift in Sources */,
+				F3FEF2852A4E0E55003F8FB5 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

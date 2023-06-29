@@ -11,7 +11,7 @@ import FirebaseStorage
 import Firebase
 
 struct WCAddComment: View {
-    var onPost: (Post)->()
+    @Binding var tabSelection: Tabs
     @State private var commentText: String = ""
     @State private var commentImageData: Data?
     
@@ -190,9 +190,13 @@ var body: some View {
                         replyCount: 0,
                         isDeleted: false
                     )
-
+                    
                     do{
-                        try Firestore.firestore().collection("whiskeyComments").document().setData(from: post)
+                        try Firestore.firestore().collection("whiskeyComments").document().setData(from: post, completion: { error in
+                            if error == nil{
+                                tabSelection = Tabs.chatter
+                            }
+                        })
                     }
                     catch{
                         
@@ -200,71 +204,8 @@ var body: some View {
                 }
             }
         }
-        
-        
-        /*Task{
-            do{
-                //Must add a photo
-                guard drinkImage != nil else{
-                    //TODO: alert that they must add a photo
-                    return
-                }
-                //guard let profileURL = profileURL else{return}
-                let imageRefID = "\(currentUser.userId)\(Date())"
-                let storageRef = Storage.storage().reference()
-                let imageData = drinkImage!.jpegData(compressionQuality: 0.8)
-                
-                guard imageData != nil else {
-                    return
-                }
-                
-                //TODO: change whiskey to selected type
-                let path = "commentimages/whiskey/\(UUID().uuidString).jpg"
-                let fileRef = storageRef.child(path)
-                
-                //User is uploading an image
-                if let imageData{
-                    storageRef.putData(imageData!)
-                    
-                    //TODO: Set liquorId and LiqourType from a picker people choose from
-                    //I hardcoded those values for now for testing
-                 let post = Post(
-                     comment: commentText,
-                     commentImageUrl: path,
-                     imageReferenceId: imageRefID,
-                     commentPublishedDate: Date(),
-                     commentLastUpdated: Date(),
-                     commentorName: currentUser.username,
-                     commentorId: currentUser.userId,
-                     liquorType: "whiskey",
-                     liquorDocId: "AVCmmW6tIISHUAs2ggFM",
-                     replyCount: 0,
-                     isDeleted: false
-                 )
-                    try await createPost(post: post)
-                }
-                else{
-                    //TODO: alert that they must add a photo
-                    return
-                }
-                
-            }
-            catch{
-                await showPostError(error)
-            }
-        }*/
     }
     
-    func createPost(post: Post) async throws{
-        //TODO: Change out hardcoded Whiskey Comments
-        let _ = try Firestore.firestore().collection("whiskeyComments").addDocument(from: post, completion: { error in
-            if error == nil{
-                isLoading = false
-                onPost(post)
-                dismiss()
-            }
-        })
-    }
     
     //TODO: Move to Error Handling
     func showPostError(_ error: Error)async{
@@ -285,8 +226,7 @@ var body: some View {
 
 struct WCAddComment_Previews: PreviewProvider {
     static var previews: some View {
-        WCAddComment{_ in
-        }
+        WCAddComment(tabSelection: Binding.constant(Tabs.chatter))
     }
 }
 
